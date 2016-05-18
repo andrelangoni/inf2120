@@ -1,0 +1,51 @@
+classe : TableauPartiel.java
+
+méthodes
+taille du tableau
+sous-tableau
+get, set
+trouver les bornes du tableau
+dédoubler pour de vrai (pas de référence, copie)
+
+éviter les répétitions
+commentaires sur les méthodes
+
+: pointeur, héritage, type générique
+
+sous-tableau
+
+T[] tableau = {7,2,3,0,-7,5,10,11,3,-2}; (générique)
+                         ,12,9   
+sous-tableau de 3 à 7
+{0,-7,5-,10}
+       ,9
+ ,12 (change la valeur dans le tableau original, référence, vérifier l'adresse avec le débogeur)
+
+{5,10}
+ ,9
+ 
+classe vide Coupe.java
+
+3 sous-classes
+CoupeDeA
+(i,j) (couper de i à j)
+
+CoupeDe
+(i) (coupe de i jusqu'à la fin)
+
+CoupeA (coupe du début jusqu`à j)
+(j)
+
+Points sur 11
+
+7 points sur la fonctionnalité
+classe Main : test (en partie 4 des 7)
+
+1 point sur la structure
+pas de goto, pas de continue, break seulement avec switch, 1 return par méthode, pas de instance of sauf dans equals
+
+3 points sur la lisibilité
+commentaires en français, méthode : description de sa tâche, rôle des arguments, contrainte sur ses arguments, description de la valeur de
+retour
+classe : description de cette classe et description de ses champs
+commentaire avant la ligne de code

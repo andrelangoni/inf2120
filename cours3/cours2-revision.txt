@@ -1,0 +1,12 @@
+classe abstraite :
+méthode sans code
+pas d'instance
+
+final : pas d'héritage
+object, enum
+
+générique -> object
+classe <T,V>
+méthode
+borne : extends, super
+<T extends PieceEchec> (n'importe quoi PieceEchec ou en dessous)

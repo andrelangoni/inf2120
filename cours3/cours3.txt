@@ -1,0 +1,9 @@
+classe Object
+2 methodes
+toString()
+equals()
+
+interface
+description de fonctionnalités pour un
+sous-ensemble de classe
+type de données : autour des méthodes, algorithme
