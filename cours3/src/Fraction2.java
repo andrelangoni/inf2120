@@ -1,4 +1,4 @@
-public class Fraction2 implements Eq<Fraction> {
+public class Fraction2 implements EqInterface<Fraction> {
     int num;
     int denum;
 
