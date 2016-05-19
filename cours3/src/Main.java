@@ -17,4 +17,8 @@ public class Main {
     public static void tri(Object[] tab) {
         
     } // tri()
+
+    public static Comparable min(Comparable x, Comparable y) {
+        return x.plusPetitQue(y) ? x : y;
+    }
 } // Main

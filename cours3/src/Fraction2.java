@@ -1,8 +1,8 @@
-public class Fraction implements Comparable {
+public class Fraction2 implements Eq<Fraction> {
     int num;
     int denum;
 
-    public Fraction(int num, int denum) {
+    public Fraction2(int num, int denum) {
         this.num = num;
         this.denum = denum;
     } // Fraction
@@ -16,8 +16,8 @@ public class Fraction implements Comparable {
     public boolean equals(Object obj) {
         boolean sontEgaux = false;
 
-        if ((null != obj) || (obj instanceof Fraction)) {
-            Fraction temp = (Fraction) obj;
+        if ((null != obj) || (obj instanceof Fraction2)) {
+            Fraction2 temp = (Fraction2) obj;
             sontEgaux = ((num * temp.denum) == (denum * temp.num));
             //return super.equals(obj);
         } // if
@@ -25,12 +25,10 @@ public class Fraction implements Comparable {
         return sontEgaux;
     } //equals()
 
-    public boolean plusPetitQue(Object o) {
-        boolean resultat= false;
-        if ((null != o) && (o instanceof Fraction)) {
-            Fraction f = (Fraction) o;
-            resultat = (num * f.denum) < (denum * f.num);
-        } // if
-        return false;
+
+    @Override
+    public boolean sontEgaux(Fraction a_element) {
+        return (num * a_element.denum) == (denum * a_element.num);
     }
+
 } // Fraction
