@@ -1,0 +1,109 @@
+Résumé cours 3
+-interfaces
+-méthodes avec default
+-héritage
+-implémentation multiple
+-types génériques ex. eq, or
+-@Override
+
+Cours 4
+Type de données abstraites (tda, adt)
+--> structure de données (classe)
+thème pour placer de l'information ensemble
+information lien commun (thème)
+procédure : action (méthode)
+fonctionnement est invisible
+
+ex. : nombre (ce qui importe pour le type abstrait)
+add, sub, ==, * (routine pour chaque type)
+int, unsigned, double, int / int (fraction), int,(int/1000)
+
+ex. : tableau
+créer (constructeur)
+get(indice)
+set(indice, valeur)
+indices de 0 à n - 1 
+lui demander sa taille (length)
+
+tableau à taille variable
+créer (constructeur)
+get(indice)
+set(indice, valeur) (enlever de là, l'écraser)
+lui demander sa taille (length)
+append (ajouter à la fin)
+remove(indice)
+insert(indice, valeur) (insérer là et déplacer l'autre élément)
+empty() (détecter si le tableau est vide)
+
+2-liste
+get(indice)
+set(indice, valeur) (enlever de là, l'écraser)
+lui demander sa taille (length)
+ajout_debut
+append (ajouter à la fin)
+supprimer_fin
+supprimer_debut
+empty() (détecter si le tableau est vide)
+
+a) file (attendre à la caisse) (ex. programmes sur Windows)
+premier entré, premier sorti (first in first out fifo)
+qui est au début de la file (le premier) debut) tete()
+supprimer_debut(), défiler
+ajouter_fin(), enfiler
+taille()
+estVide()
+
+b) pile : premier entré, dernier sorti (filo, lifo, last int first out)
+ex. : assiettes pour manger, prendre la dernière assiette lavée
+sommet(), top()
+depiler()
+empiler()
+taille()
+estVide()
+
+(problème de récursion)
+
+à la création, p est vide <--> taille == 0
+p.empiler(6)
+p.empiler(4)
+p.empiler(3)e
+p.depiler()
+p.depiler()
+p.empiler(8)
+p.sommet() == 8
+
+c) p.depiler()
+p.sommet == 6
+
+au début, pile vide
+
+6
+4,6
+3,4,6
+4,6
+6
+8,6
+6
+
+ex. : file f
+f.estVide() <--> taille() == 0
+f.enfiler(6)
+f.enfiler(4)
+f.enfiler(3)
+f.defiler()
+f.defiler()
+f.enfiler(8)
+f.premier() == 3
+f.defiler()
+f.premier() == 8
+
+6
+4,6
+3,4,6
+3,4
+3
+8,3
+
+arbre binaire, de recherche (fin de la session)
+
+tda : liste, file, pile
