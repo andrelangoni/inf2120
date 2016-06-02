@@ -1,0 +1,72 @@
+Résumé
+
+TDA
+Pile,File
+-liste chaînée
+facile: extrémité
+
+Java Class ArrayList<E>
+https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html
+
+- implements RandomAccess (accès direct à un élément)*
+
+- droit d'utiliser pour le tp (plus dur qu'avec un tableau ordinaire selon le chargé de cours)
+Méthodes:
+contains(Object o)
+get(int index)*
+set(int index, E element)
+isEmpty()
+subList(int fromIndex, int toIndex)
+
+Java Class Stack<E>
+https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html
+
+Java Interface Queue<E>
+https://docs.oracle.com/javase/8/docs/api/java/util/Queue.html
+
+add(e)	enfiler
+poll() defiler
+element() premier
+
+Interface Iterator<E>
+https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
+
+Méthodes
+hasNext()
+next()
+
+// Initialiser l'itérateur
+// fin ? hasNext()
+// avantage de l'itérateur ?
+// pour les types auquel on ne peut accéder directement à l'indice
+// dernier lab ?
+// faire une file au lieu d'une pile (cours 4)
+// suivant/courant next()
+
+// liste doublement chaînée
+// atteindre le milieur est le plus long
+// au contraire il est rapide d'atteindre les extrémités (avec des pointeurs)
+
+----------
+
+JUnit test unitaire (unit test)
+http://junit.org/junit4/
+
+Tester un détail
+-> assertions
+Java mot clé: assert (aider un programmeur)
+si le test : vrai (silencieux)
+sinon (arrête le programme)
+détecter des problèmes causés du programmeur
+et non ceux causés par une mauvaise utilisation
+assert expression booléenne;
+// permet d'isoler les erreurs
+assert x > 12;
+assert y != null;
+// barrière pour trouver l'erreur
+org.junit.assert
+http://www.tutorialspoint.com/junit/junit_using_assertion.htm
+assertEquals("message", object1, object2)
+assertFalse("", boolean)
+assertTrue()
+assertArrayEquals("", tab1, tab2)
