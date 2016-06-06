@@ -2,6 +2,7 @@ package inf2120ete2016;
 
 import java.util.Iterator;
 
+@SuppressWarnings("WeakerAccess")
 public class ListeDC<E> implements Iterable<E> {
 	private class Noeud<T>{
 		public Noeud<T> _precedant = null;
@@ -124,6 +125,6 @@ public class ListeDC<E> implements Iterable<E> {
 	}
 	
 	public Iterator<E> iterator(){
-		return new IterListeDC<E>( this );
+		return new IterListeDC<>(this);
 	}
 }
