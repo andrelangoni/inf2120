@@ -38,8 +38,6 @@ public class MainTest {
         assertEquals(expResult, result);
     } // estPalindrome()
 
-    public void println(String s) {
-        System.out.println(s);
-    } // println()
+    public void println(String s) { System.out.println(s); } // println()
 
 } // MainTest
