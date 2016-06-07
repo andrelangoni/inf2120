@@ -20,20 +20,20 @@ public class Pile<E> {
             throw new PileVide();
         } // if
         return _sommet.element;
-    }
+    } // tete()
 
     public void empiler(E a_element) {
         _sommet = new Noeud<E>(a_element, _sommet);
         ++_taille;
-    }
+    } // enfiler()
 
     public void depiler() throws PileVide {
         if (estVide()) {
             throw new PileVide();
-        }
+        } // if
         _sommet = _sommet.precedent;
         --_taille;
-    }
+    } // defiler()
 
     private class Noeud<E> { // private
         public E element;
@@ -44,4 +44,4 @@ public class Pile<E> {
             this.precedent = precedent;
         }
     }
-}
+} // Pile
