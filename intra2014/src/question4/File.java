@@ -41,14 +41,14 @@ public class File<T> implements IFile<T> {
     @Override
     public void enfiler(T element) {
         if (estVide()) {
-            _fin = new Noeud(element, null);
+            _fin = new Noeud<>(element, null);
             _debut = _fin;
         } else {
-            _fin.precedent = new Noeud(element, null);
+            _fin.precedent = new Noeud<>(element, null);
             _fin = _fin.precedent;
-        }
+        } // else
         ++_taille;
-    }
+    } // enfiler()
 
     @Override
     public T defiler() throws FileVide {
