@@ -27,4 +27,14 @@ public class Main {
         }
         return estPal;
     } // estPalindrome()
+
+    public static void supprimer(File<Integer> f, int valeur) throws FileVide {
+        int element;
+        for (int i = f.taille(); i > 0; i--) {
+            element = f.defiler();
+            if (element != valeur) {
+                f.enfiler(element);
+            } // if
+        } // for
+    } // supprimer()
 } // Main
