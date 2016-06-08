@@ -1,0 +1,34 @@
+Tp2: classe hérite de ArrayList
+étiquettée
+0,1, 2,3,4,5,6,7,8,9 index
+7,12,3,4,5,7,2,4,0,3 valeur
+     suite (nom de l'étiquette) (3,4,5) de l'indice 2 (départ) à 4 (arrivée)
+       impair (5,7) de 4 à 5
+étiquette sur une partie continue
+(iterator fonctions surchargées)
+iterator(étiquette "impair")
+7,5,7
+retournés dans l'ordre qu'ils sont dans le tableau
+iterator(5) (étiquettes pour 5)
+impair,suite
+classe Étiquette + signatures itérateurs
+
+["Il", "est", "important", "de", "bien", "expliquer", "vos", "choix"]
+sujet, verbe (étiquette)
+ADN
+GTCCTCAGT
+  ------ (rôle)
+
+Résumé
+iterator, iterable
+ArrayList, pile, file, liste dc
+for, while sur itérateurs
+
+Java enhanced for (foreach)
+
+// trace
+MMath.somme(5)
+// pour chaque methode appelee, une instance est cree
+
+# factoriel
+# Fibonnaci
