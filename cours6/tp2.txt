@@ -32,3 +32,10 @@ MMath.somme(5)
 
 # factoriel
 # Fibonnaci
+
+# site du zéro
+maximum d'une liste
+tableau : [7,2,11,18,4,5]
+[7,2,11] et [18,4,5]
+[7] et [2,11] et [18] et [4,5]
+
