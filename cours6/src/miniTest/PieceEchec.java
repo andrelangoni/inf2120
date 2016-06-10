@@ -13,7 +13,13 @@ public class PieceEchec {
 
     @Override
     public boolean equals(Object obj) {
-        PieceEchec piece = (PieceEchec) obj;
-        return ((piece.t == t) && (piece.c == c));
+        boolean b = false;
+
+        if (obj instanceof PieceEchec) {
+            PieceEchec piece = (PieceEchec) obj;
+            b = ((piece.t == t) && (piece.c == c));
+        } // if
+
+        return b;
     } // equals()
 } // PieceEchec
