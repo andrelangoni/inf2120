@@ -1,0 +1,13 @@
+Les fonctions en Java 8
+1 - Méthode dans une classe
+2 - Notation "lambda" -> fonctions anonymes
+-> type: structure de classe
+java.util.function
+interface Function<T, R>
+Interface Predicate<T> -> vérifie une caractéristique
+Interface Consumer<T> - effet de bord, modifier l'instance de l'objet
+Interface Supplier<T>
+bi = deux arguments
+unary = un argument
+
+Notation lambda : caché cette mécanique
