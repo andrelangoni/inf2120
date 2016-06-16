@@ -1,0 +1,55 @@
+Résumé - Intra
+1 - héritage (extends)
+- sous-classe, super
+- membre : public, protected, rien, private
+- caché, redéfénir
+- classe Object, méthodes equals(), toString()
+- @Override
+
+2.1 - classes abstraites (abstract), méthodes abstraites -> pas d'instance
+- final class
+- classes Enum, Exception
+- instanceof
+
+2.2 généricité
+classe <T> (T remplacé par Object par le compilateur)
+Notation: List<Integer> li = new Li<>();
+-> pas de champ statique
+pas de new T[] (tableau de types génériques)
+type Pair
+méthode public<E> int F(E element)
+<E extends ...> (limite du type générique)
+<E super ...> (limite du type générique)
+
+3 - interface : implements
+-> contrat fonction
+-> héritage
+-> champs public, static, final
+-> générique
+-> méthode default
+
+4 - TDA : types de données abstraites (cacher le fonctionnement)
+définition : méthodes
+listes - ajout, supression (début ou fin)
+piles - méthodes: sommet, empiler, depiler, estVide, taille
+files - méthodes: tete, enfiler, defiler, estVide, taille
+
+a) listes chainées (à l'examen)
+Noeud: élément + pointeur(s) (1 ou 2)
+null (indique la fin de la liste)
+
+5 - b) ArrayList -> pile, file (héritage)
+add, iterator, get, set
+Collection: héritage + interface
+Iterator contient méthodes hasNext() et next() (important examen)
++ Iterable contient une méthode iterator()
+foreach
+
+6 - Récursion
+écrire, lire, code récursif
+f(1) = 1
+f(x) = f(x - 1) + 7
+-> trace
+version itérative
+
+
