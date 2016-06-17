@@ -1,4 +1,4 @@
-public class Fraction2 implements EqInterface<Fraction> {
+public class Fraction2 implements EqInterface<Fraction2> {
     int num;
     int denum;
 
@@ -16,7 +16,7 @@ public class Fraction2 implements EqInterface<Fraction> {
     public boolean equals(Object obj) {
         boolean sontEgaux = false;
 
-        if ((null != obj) || (obj instanceof Fraction2)) {
+        if ((null != obj) && (obj instanceof Fraction2)) {
             Fraction2 temp = (Fraction2) obj;
             sontEgaux = ((num * temp.denum) == (denum * temp.num));
             //return super.equals(obj);
@@ -27,8 +27,8 @@ public class Fraction2 implements EqInterface<Fraction> {
 
 
     @Override
-    public boolean sontEgaux(Fraction a_element) {
+    public boolean sontEgaux(Fraction2 a_element) {
         return (num * a_element.denum) == (denum * a_element.num);
-    }
+    } // sontEgaux()
 
 } // Fraction
