@@ -28,8 +28,8 @@ pas de new T[] (tableau de types génériques)
 type Pair
 https://github.com/charlesfranciscodev/inf2120/blob/master/intra2014/src/question5/Paire.java
 méthode public<E> int F(E element)
-<E extends ...> (limite supérieure du type générique)
-<E super ...> (limite inférieure du type générique)
+<E extends ...> (limite supérieure du type générique, incluse)
+<E super ...> (limite inférieure du type générique, excluse)
 
 3 - interface : implements
 -> contrat fonction
@@ -61,5 +61,3 @@ f(1) = 1
 f(x) = f(x - 1) + 7
 -> trace
 version itérative
-
-
