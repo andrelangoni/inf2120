@@ -1,0 +1,4 @@
+package generiqueLimite;
+
+class Machine {
+}

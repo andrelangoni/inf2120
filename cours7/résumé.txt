@@ -1,25 +1,35 @@
 Résumé - Intra
 1 - héritage (extends)
 - sous-classe, super
-- membre : public, protected, rien, private
-- caché, redéfénir
-- classe Object, méthodes equals(), toString()
+- membre: public, protected, rien, private 
+
+Visibilité (voir révision Ismael)
+Modificateur Classe Paquetage Sous-classe Partout
+private      Oui    Non       Non         Non
+rien         Oui    Oui       Non         Non
+protected    Oui    Oui       Oui         Non
+public       Oui    Oui       Oui         Oui
+
 - @Override
+- caché, redéfénir (la méthode cache l'autre méthode (même signature))
+- classe Object, méthodes equals(), toString()
+- polymorphisme (des méthodes de même nom avec des signatures différentes)
 
 2.1 - classes abstraites (abstract), méthodes abstraites -> pas d'instance
-- final class
+- final class (Une classe finale ne peut pas avoir de sous-classe.)
 - classes Enum, Exception
 - instanceof
 
 2.2 généricité
 classe <T> (T remplacé par Object par le compilateur)
-Notation: List<Integer> li = new Li<>();
+Notation: List<Integer> li = new List<>();
 -> pas de champ statique
 pas de new T[] (tableau de types génériques)
 type Pair
+https://github.com/charlesfranciscodev/inf2120/blob/master/intra2014/src/question5/Paire.java
 méthode public<E> int F(E element)
-<E extends ...> (limite du type générique)
-<E super ...> (limite du type générique)
+<E extends ...> (limite supérieure du type générique)
+<E super ...> (limite inférieure du type générique)
 
 3 - interface : implements
 -> contrat fonction
