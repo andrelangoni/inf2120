@@ -12,7 +12,7 @@ public class Tableau {
    *               comportement du constructeur n'est pas défini si la taille est négative.
    */
   public Tableau(int taille) {
-    assert (taille >= 0);
+    //assert (taille >= 0);
     tab = new int[taille];
   }
 
@@ -25,7 +25,7 @@ public class Tableau {
    * @return La valeur lue.
    */
   public int element(int position) {
-    assert ((position >= 0) && (position < taille() - 1));
+    //assert ((position >= 0) && (position < taille()));
     return tab[position];
   }
 
@@ -38,7 +38,7 @@ public class Tableau {
    * @param element  Valeur placé dans le tableau.
    */
   public void assigner(int position, int element) {
-    assert ((position >= 0) && (position < taille() - 1));
+    //assert ((position >= 0) && (position < taille() - 1));
     tab[position] = element;
   }
 
