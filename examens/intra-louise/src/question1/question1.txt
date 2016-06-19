@@ -1,0 +1,44 @@
+1.1 abstract
+
+a) Le mot clé "abstract" peut être utilisé sur les classes et les
+méthodes.
+b) Une classe abstraite ne peut pas être instanciée.
+c) Une méthode abtraite ne peut pas être définie.
+d) Seulement une classe abstraite peut avoir des méthodes abstraites.
+e) Si une classe hérite d'une classe abstraite, elle doit implémenter
+toutes les méthodes abstraites de la classe parente.
+
+1.2 interface
+
+a) On ne peut pas instancier une interface
+b) toutes les méthodes d'une interface sont abstraites
+(sans le mot clé "abstract")
+c) Une classe implémente une interface, et
+hérite de ces méthodes abstraites.
+
+1.3 public private protected final
+
+visibilité des champs, méthodes, classes
+
+Visibilité (voir révision Ismael)
+Modificateur Classe Paquetage Sous-classe Partout
+private      Oui    Non       Non         Non
+rien         Oui    Oui       Non         Non
+protected    Oui    Oui       Oui         Non
+public       Oui    Oui       Oui         Oui
+
+1.4 final
+champs, méthodes, classes
+Un champ final est une constante.
+Une méthode finale ne peut pas être redéfinie.
+Une classe finale ne peut pas être héritée.
+
+1.5 this
+l'instance courante de la classe
+
+1.6 super
+la classe parente (de laquelle la classe à hérité)
+
+1.7 static
+champ/méthode : une seule version du champ/méthode associé(e) à la classe (accessible sans instance ou avec instance)
+
