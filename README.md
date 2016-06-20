@@ -11,7 +11,3 @@
 
 ### Démos
 [GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo)
-### Examens
-[solution intra Été 2013](https://github.com/charlesfranciscodev/inf2120/tree/master/examens/intra-e2013)
-
-[solution intra Hiver 2014](https://github.com/charlesfranciscodev/inf2120/tree/master/intra2014)
