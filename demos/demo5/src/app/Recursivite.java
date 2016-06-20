@@ -4,7 +4,6 @@ import services.IRecursivite;
 import services.RecursiviteException;
 
 public class Recursivite implements IRecursivite {
-
   @Override
   public int additionner(int nombre, int nFois) throws RecursiviteException {
     // Cas de base
@@ -21,6 +20,10 @@ public class Recursivite implements IRecursivite {
 
   @Override
   public int pgcd(int n, int m) {
-    return 0;
+    if (m == 0) {
+      return n;
+    } // if
+
+    return pgcd(m, n % m);
   } // pgcd()
 } // Recursivite
