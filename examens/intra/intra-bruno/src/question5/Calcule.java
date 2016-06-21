@@ -4,13 +4,28 @@ package question5;
 public class Calcule {
   // pas d'interfaces ou de classes abstraites car on ne peut modifier les autres classes;
   // utilise la genericite ou instanceof n'est pas necessaire;
-  // le polymorphisme suffit;
-  public static double aire(Carre carre) {
+/*  public static double aire(Carre carre) {
     return 0d;
   } // aire()
 
   public static double aire(Sphere sphere) {
-    return 0d;
+    return 1d;
+  } // aire()*/
+
+  // pas de polymorphisme car une seule méthode permise
+  // pas de généricité car on ne peut pas changer les classes
+
+
+  public static double aire(Object o) {
+    double d;
+    if (o instanceof Carre) {
+      d = 0;
+    } else if (o instanceof Sphere) {
+      d = 1;
+    } else {
+      d = -1;
+    } // else
+    return d;
   } // aire()
 
   public static void main(String[] args) {
