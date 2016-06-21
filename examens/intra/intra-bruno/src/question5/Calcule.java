@@ -24,6 +24,7 @@ public class Calcule {
       d = 1;
     } else {
       d = -1;
+      System.out.println("Erreur");
     } // else
     return d;
   } // aire()
@@ -34,7 +35,7 @@ public class Calcule {
     Sphere sphere = new Sphere();
     println(aire(carre));
     println(aire(sphere));
-    //println(aire(plan)); erreur
+    println(aire(plan)); //erreur
   } // main()
 
   public static void println(Object o) {
