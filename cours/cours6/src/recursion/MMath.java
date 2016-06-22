@@ -18,7 +18,6 @@ public class MMath {
     return s;
   } // factoriel()
 
-  // Mauvais algorithme
   public static int fibonnaci(int n) {
     int s = n;
     if (n > 1) {
