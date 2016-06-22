@@ -3,7 +3,6 @@ package question5;
 @SuppressWarnings("WeakerAccess")
 public class Calcule {
   // pas d'interfaces ou de classes abstraites car on ne peut modifier les autres classes;
-  // utilise la genericite ou instanceof n'est pas necessaire;
 /*  public static double aire(Carre carre) {
     return 0d;
   } // aire()
