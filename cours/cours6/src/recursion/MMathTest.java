@@ -23,8 +23,8 @@ public class MMathTest {
 
   @org.junit.Test
   public void hanoi() throws Exception {
-    //MMath.hanoi(2, 'A', 'C', 'B');
-    MMath.hanoi(3, 'A', 'C', 'B');
+    MMath.hanoi(2, 'A', 'C', 'B');
+    //MMath.hanoi(3, 'A', 'C', 'B');
   }
 
 }
