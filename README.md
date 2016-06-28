@@ -7,7 +7,7 @@
 2. classes abstraites, type générique, enum, [classe Exception](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html)
 3. interfaces
 4. TDA, listes chainées, piles, files
-5. [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), iterator()
+5. [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), iterator(), [JUnit](http://junit.org/junit4/)
 6. récursion vs itération
 7. fonctions, notation "lambda"
 
