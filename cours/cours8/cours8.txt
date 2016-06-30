@@ -1,0 +1,47 @@
+remise tp2 : 6 juillet 23:55
+résumé : stream <- collection
+iterateur(position)
+filter, foreach, map, iterate, generate
+
+A) interface graphique (GUI)
+fenêtre, bouton, menu, ...
+
+Librairies : AWT, Swing
+définition : composante : élément d'une interface
+-> visible
+-> interaction
+
+contenant : placer des composantes
+-> sont des composantes
+
+"listener" (écouteur) : gestionnaire d'événement. (interaction)
+Javax.Swing.JFrame
+
+pour plus de détails, voir notes Ismael
+
+en plus des composants donnés en exemple il y aussi:
+JTextArea
+https://docs.oracle.com/javase/8/docs/api/javax/swing/JTextArea.html
+JRadioButton, JCheckBox
+
+"design" layout -> contenant ex, JFrame
+3 principaux de base (automatique)
+comment placer les composantes
+-> setLayout : associe un layout au contenant
+avant d'ajouter les composantes
+
+1) FlowLayout
+https://docs.oracle.com/javase/8/docs/api/java/awt/FlowLayout.html
+2) GridLayout
+3) BorderLayout
+
+mettre un layout dans un layout : JPanel : container (voir classe GUIEx3)
+
+B) Threads
+file d'éxecution
+code -> executé sur un processeur
+plusieurs threads (multithreading)
+thread -> Runnable
+
+
+cours 9
