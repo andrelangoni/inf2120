@@ -2,6 +2,7 @@ package inf2120.tp3;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -11,7 +12,6 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 
 @SuppressWarnings("WeakerAccess")
 public class Pdemo extends JFrame {
@@ -43,7 +43,7 @@ public class Pdemo extends JFrame {
   double duree = 1.0;
 
   // Ondes
-  TypeOnde typeOnde[] = {TypeOnde.SINUSOIDALE, TypeOnde.PULSE_GENERIQUE};
+  static TypeOnde typeOnde[] = {TypeOnde.SINUSOIDALE, TypeOnde.PULSE_GENERIQUE};
   // valeur entre 0 et 1, utilise si nous avons onde PULSE_GENERIQUE ou TRIANGLE_GENERIQUE.
   double ondeRatio[] = {0.5, 0.7};
 
@@ -93,11 +93,14 @@ public class Pdemo extends JFrame {
     return resultat;
   } // construireOndeBase()
 
-  public Onde construireOnde(int type1, int type2) {
-    Onde resultat = construireOndeBase(type1);
+  public Onde construireOnde() {
+    int indexType1 = 0;
+    int indexType2 = 1;
+
+    Onde resultat = construireOndeBase(indexType1);
 
     if (utilise2Ondes) {
-      resultat = new Mixe(resultat, ratioVolume, construireOndeBase(type2), 1.0 - ratioVolume);
+      resultat = new Mixe(resultat, ratioVolume, construireOndeBase(indexType2), 1.0 - ratioVolume);
       resultat.setDure(duree);
     } // if
 
@@ -109,10 +112,6 @@ public class Pdemo extends JFrame {
     } // if
 
     return resultat;
-  }  // construireOnde()
-
-  public Onde construireOnde() {
-    return construireOnde(0, 1);
   }  // construireOnde()
 
   @SuppressWarnings("UnusedAssignment")
@@ -166,17 +165,38 @@ public class Pdemo extends JFrame {
   public static void main(String[] args) {
     Pdemo ecran = new Pdemo();
     ecran.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    BorderLayout layout = new BorderLayout();
+    ecran.setLayout(new BorderLayout());
     ecran.setSize(Graphic.TAILLE_X + BORDURE_X, 2 * Graphic.TAILLE_Y + BORDURE_Y);
 
     JPopupMenu menu = new JPopupMenu("Type d'onde");
-    JPopupMenu.setDefaultLightWeightPopupEnabled(false);
-    menu.setBorder(new BevelBorder(BevelBorder.RAISED));
-    JMenuItem item = new JMenuItem(TypeOnde.SINUSOIDALE.name());
-    menu.add(item);
+
+    JMenu menu1 = new JMenu("type 1");
+    JMenu menu2 = new JMenu("type 2");
+
+    for (TypeOnde type : TypeOnde.values()) {
+      JMenuItem item1 = new JMenuItem(type.name());
+      JMenuItem item2 = new JMenuItem(type.name());
+
+      item1.addActionListener(e -> {
+        typeOnde[0] = type;
+        boutonAppuye(ecran);
+      }); // addActionListener()
+
+      item2.addActionListener(e -> {
+        typeOnde[1] = type;
+        boutonAppuye(ecran);
+      }); // addActionListener()
+
+      menu1.add(item1);
+      menu2.add(item2);
+    } // for
+
+    menu.add(menu1);
+    menu.add(menu2);
 
      // Construire l'interface.
     dessin = new Graphic();
+
     dessin.addMouseListener(new MouseListener() {
       @Override
       public void mouseClicked(MouseEvent e) {
@@ -191,20 +211,13 @@ public class Pdemo extends JFrame {
       public void mouseEntered(MouseEvent e) {}
       @Override
       public void mouseExited(MouseEvent e) {}
-    });
+    }); // addMouseListener()
 
     JButton bouton = new JButton("Joue");
     bouton.addActionListener((ActionEvent e) -> boutonAppuye(ecran));
-    bouton.setInheritsPopupMenu(true);
 
-    JPanel panelEcran = new JPanel();
-    panelEcran.setLayout(layout);
-    panelEcran.setComponentPopupMenu(menu);
-
-    panelEcran.add(bouton, BorderLayout.SOUTH);
-    panelEcran.add(dessin, BorderLayout.CENTER);
-
-    ecran.add(panelEcran);
+    ecran.add(bouton, BorderLayout.SOUTH);
+    ecran.add(dessin, BorderLayout.CENTER);
 
     // Afficher la fenetre.
     ecran.setVisible(true);
@@ -212,11 +225,16 @@ public class Pdemo extends JFrame {
     boutonAppuye(ecran);
   }  // main()
 
-  /** les 4 commandes a faire lorsque le boutton est appuye. */
   private static void boutonAppuye(Pdemo ecran) {
     Onde onde = ecran.construireOnde();
     dessin.setFonction(onde);
     dessin.repaint();
     jouerNote(onde);
   } // boutonAppuye()
+
+  private static void setType1(TypeOnde type1) {
+    typeOnde[0] = type1;
+    //boutonAppuye(ecran);
+  } // setType1()
+
 } // PDemo
