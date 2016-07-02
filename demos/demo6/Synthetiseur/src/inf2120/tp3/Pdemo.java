@@ -2,6 +2,8 @@ package inf2120.tp3;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
@@ -175,6 +177,21 @@ public class Pdemo extends JFrame {
 
      // Construire l'interface.
     dessin = new Graphic();
+    dessin.addMouseListener(new MouseListener() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        menu.show(dessin, e.getX(), e.getY());
+      } // mouseClicked()
+
+      @Override
+      public void mousePressed(MouseEvent e) {}
+      @Override
+      public void mouseReleased(MouseEvent e) {}
+      @Override
+      public void mouseEntered(MouseEvent e) {}
+      @Override
+      public void mouseExited(MouseEvent e) {}
+    });
 
     JButton bouton = new JButton("Joue");
     bouton.addActionListener((ActionEvent e) -> boutonAppuye(ecran));
