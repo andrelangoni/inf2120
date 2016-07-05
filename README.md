@@ -1,5 +1,5 @@
 ## UQAM - Baccalauréat en informatique et génie logiciel
-[INF2120 Programmation II](http://www.etudier.uqam.ca/cours?sigle=INF2120&p=7416)
+[INF2120 Programmation II](http://www.etudier.uqam.ca/cours?sigle=INF2120&p=7416) (Java)
 
 Été 2016
 ### Sujets couverts
@@ -10,6 +10,7 @@
 5. [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), iterator(), [JUnit](http://junit.org/junit4/)
 6. récursion vs itération
 7. fonctions, notation "lambda"
+8. interfaces graphiques 
 
 ### Démos
 [GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo)
