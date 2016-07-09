@@ -19,12 +19,14 @@ public class ArbreBinaireQuelquesMethodes {
    *
    * @param racine La racine de l'ABR
    */
-  public void parcoursPrefixe(NoeudABR<String> racine) {
+  public static void parcoursPrefixe(NoeudABR<String> racine) {
 
     if (racine != null) {
 
-      System.out.print(racine.getElement() + " ");
+      System.out.println(racine.getElement() + " ");
+      System.out.println("Gauche de " + racine.getElement());
       parcoursPrefixe(racine.getGauche());
+      System.out.println("Droite de " + racine.getElement());
       parcoursPrefixe(racine.getDroit());
 
     }
@@ -36,7 +38,7 @@ public class ArbreBinaireQuelquesMethodes {
    *
    * @param racine La racine de l'ABR
    */
-  public void parcoursInfixe(NoeudABR<String> racine) {
+  public static void parcoursInfixe(NoeudABR<String> racine) {
 
     if (racine != null) {
 
@@ -53,7 +55,7 @@ public class ArbreBinaireQuelquesMethodes {
    *
    * @param racine La racine de l'ABR
    */
-  public void parcoursPostfixe(NoeudABR<String> racine) {
+  public static void parcoursPostfixe(NoeudABR<String> racine) {
 
     if (racine != null) {
 
@@ -72,7 +74,7 @@ public class ArbreBinaireQuelquesMethodes {
    * @param racine  La racine de l'ARB
    * @return ABR
    */
-  public NoeudABR<String> inserer(String element, NoeudABR<String> racine) {
+  public static NoeudABR<String> inserer(String element, NoeudABR<String> racine) {
 
     // Si l'arbre est null
     if (racine == null) {
@@ -97,7 +99,7 @@ public class ArbreBinaireQuelquesMethodes {
    * @param racine La racine de l'ABR
    * @return La taille de l'ABR
    */
-  public int taille(NoeudABR<String> racine) {
+  public static int taille(NoeudABR<String> racine) {
 
     int taille = 0;
 
