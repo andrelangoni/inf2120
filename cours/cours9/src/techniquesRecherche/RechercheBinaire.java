@@ -98,9 +98,10 @@ public class RechercheBinaire<T extends Comparable<T>> {
 
     System.out.println();
     System.out.println();
+    System.out.println("Recherche Binaire Iterative");
     System.out.println("Indice est " + rechercheBinaire.rechercheBinaireIterative(tableauOrdonne, 0, 9, 9));
-
-
+    System.out.println("Recherche Binaire Recursive");
+    System.out.println("Indice est " + rechercheBinaire.rechercheBinaireRecursive(tableauOrdonne, 0, 9, 9));
   }
 
 }
