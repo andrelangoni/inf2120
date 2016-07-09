@@ -1,0 +1,68 @@
+Composante--> Contenant : contient composante
+Layout a le boarder, layout de base, on a aussi vue le flow layout(comme une liste chaine) et on vue le grid layout
+On a vue le principe de Listener, donc nos routine qui nous permet decouter des evenement(gestionare devenement) pour pouvoir reagir quand qq1 utilise nos composante
+On va parler dalgoritme de recherche, de trie,arbre binaire de recherche
+
+
+
+Technique de recherche
+------------------------
+Rappel: Notation grand O(lettre O) , on veux mesurer les performance dun algorithme--> au niveau du temps et de lespace(memoire)
+On veut faire une evaluation avant decrire le code
+Ce qui va etre important sa va etre le nombre de donner a traiter --> N
+on va vouloir representer le traitement pas une fonction --> F(N)
+Cette fonction calcul le nb doperation que le processeur doit effectuer
+F(N) aide a connaitre le taux de croissance
+On essaye de construire des borne superieur et inferieure.
+Borne superieure: G(N) Borne superieurement F(N) <==>
+si pour tous les N plus grand que S, il existe un cas tel que F(N) <= que K fois G(N)
+
+
+
+2 methode differente pour retourne la position dun element dans un tableau
+----------------------------
+int Recherche ( E[] Tableau, E element){
+int position=-1;
+for (i=0;i<tableau.lenght; ++i){
+if(tableau[i].equals(element)){
+pos = i;
+}
+return pos;
+}
+
+
+int Recherche ( E[] Tableau, E element){
+int i=0
+while(i<tableau.lenght && tab[i].equals(element)){
+i++;
+}
+
+if(i==tableau.lenght){throw ElementDoNotExist exception....}
+return i;
+
+
+
+
+Recherche Binaire
+-------------------
+Tableau Trier du plus petit au plus grand |_____________________|
+
+int RechercheBinaire (E[]Tab, E Element){
+int debut = 0;
+int fin = tab.lenght - 1;
+int milieu;
+
+while (debut < fin){
+milieu = (debut + fin)/ 2;
+if (tab[milieu].compareTo(element)<0){
+debut = milieu;}
+else {
+fin = milieu
+}
+
+
+}
+
+
+
+
