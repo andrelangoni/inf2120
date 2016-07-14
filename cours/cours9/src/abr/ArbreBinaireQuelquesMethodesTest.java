@@ -24,9 +24,18 @@ public class ArbreBinaireQuelquesMethodesTest {
     ArbreBinaireQuelquesMethodes.inserer("manchot", racine);
   } // setUp()
 
+  /*
   @Test
   public void parcoursPrefixe() throws Exception {
+    System.out.println("parcoursPrefixe()");
     ArbreBinaireQuelquesMethodes.parcoursPrefixe(racine);
+  } // parcoursPrefixe()
+  */
+
+  @Test
+  public void parcoursInfixe() throws Exception {
+    System.out.println("parcoursInfixe()");
+    ArbreBinaireQuelquesMethodes.parcoursInfixe(racine);
   } // parcoursPrefixe()
 
   @Test
@@ -39,6 +48,17 @@ public class ArbreBinaireQuelquesMethodesTest {
   public void hauteur() throws Exception {
     // Assert
     assertEquals(5, ArbreBinaireQuelquesMethodes.hauteur(racine));
+  } // hauteur()
+
+  @Test
+  public void supprimer() throws Exception {
+    // Assert
+    String element = "serpent";
+    System.out.println("supprimer() " + element);
+    ArbreBinaireQuelquesMethodes.supprimer(racine, element);
+    assertEquals(9, ArbreBinaireQuelquesMethodes.taille(racine));
+    ArbreBinaireQuelquesMethodes.parcoursInfixe(racine);
+    System.out.println();
   } // hauteur()
 
 } // ArbreBinaireQuelquesMethodesTest

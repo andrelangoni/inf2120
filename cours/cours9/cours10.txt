@@ -1,0 +1,53 @@
+cours10
+Résumé cours9
+recherche - equals - O(n)
+binaire - compareTo - O(log(n))
+abr
+recherche
+insertion
+code - O(log(n)) -> O(n)
+
+supression
+suivant d'un noeud
+1 droite puis à gauche jusqu'à trouver null
+précédent d'un noeud
+1 gauche puis à droite jusqu'à trouver null
+
+parcours voir tous les éléments
+infixe, arrive en ordre (tri)
+suffixe,
+préfixe
+parcours
+          2(infixe)
+(préfixe)1 3(suffixe)
+
+parcours() {
+    // préfixe
+    if (gauche != null)
+        gauche.parcours();
+    // 2 infixe
+    if (droite != null)
+        droite.parcours();
+    // 3 suffixe
+}
+
+Partie 2 - TRI
+- tableau
+- placer en ordre
+Types de tri
+- sélection O(n^2)
+- insertion
+pire O(n^2) liste inversé
+moyen O(n^2)
+meilleur O(n) liste en ordre
+- bulle O(n^2)
+- rapide (quicksort) (récursif)
+INF3105
+- shell
+- fusion
+- monceau
+
+-> Comparable <
+combien de comparaison
+-> preuve O(n * log(n))
+borne inférieure

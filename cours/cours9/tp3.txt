@@ -1,0 +1,15 @@
+tp3 : 29 juillet
+interface : gui
+agenda hebdo
+borderlayout
+3 sections : NORTH, WEST, CENTER
+activités
+- titre (JTextField)
+- description (JTextArea)
+- heure (JTextField)
+bouton ajout (NORTH)
+clique event ->
+des champs vides apparaissent (CENTER)
+- WEST : titres des activités en ordre selon l'heure (10 titres)
+valider l'heure hh:mm
+couper les titres dans la colonne de gauche

@@ -128,4 +128,40 @@ public class ArbreBinaireQuelquesMethodes {
     return hauteur;
   }
 
+  // cours 10 bruno
+  // normalement avec générique
+  // protected
+  public static String elementPlusAGauche(NoeudABR<String> racine) {
+    return (racine.getGauche() == null) ? racine.getElement() : elementPlusAGauche(racine.getGauche());
+  } // elementPlusAGauche()
+
+  public static NoeudABR<String> supprimer(NoeudABR<String> racine, String element) {
+    NoeudABR<String> resultat = racine;
+    int direction = element.compareTo(racine.getElement());
+
+    if (direction < 0) {
+      if (racine.getGauche() != null) {
+        racine.setGauche(supprimer(racine.getGauche(), element));
+      } // if
+    } else if (direction > 0) {
+      if (racine.getDroit() != null) {
+        racine.setDroit(supprimer(racine.getDroit(), element));
+      } // if
+    } else {
+      // supression (quand l'élément est trouvé)
+      // 4 cas possibles
+      // 2 premier cas (2 null ou gauche est null)
+      if (racine.getGauche() == null) {
+        resultat = racine.getDroit();
+      } else if (racine.getDroit() == null) {
+        resultat = racine.getGauche();
+      } else {
+        racine.setElement(elementPlusAGauche(racine.getDroit()));
+        racine.setDroit(supprimer(racine.getDroit(),racine.getElement()));
+      } // else
+    } // else
+
+    return resultat;
+  } // supprimer()
+
 }
