@@ -1,3 +1,5 @@
+package bruno1;
+
 public class Cours {
   static final int DEFAUT = -1;
 
