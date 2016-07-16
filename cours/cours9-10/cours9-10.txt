@@ -1,0 +1,15 @@
+INF2120 - Programmation II - Été 2016
+Cours 9 et 10
+Notes de cours
+5 juillet 2016
+
+Algorithme: Structure de données
+1-Recherche
+2-Tri
+3-Arbre binaire de recherche
+
+Technique de recherche:
+Notation "O" (mesurer la performance de l'algorithme --> temps, espace)
+-> évaluation avant d'écrire le code
+
+1-Recherche
