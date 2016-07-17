@@ -10,7 +10,9 @@
 5. [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), iterator(), [JUnit](http://junit.org/junit4/)
 6. récursion vs itération
 7. fonctions, notation "lambda"
-8. interfaces graphiques 
+8. interfaces graphiques
+9. recherche, arbre binaire de recherche
+10. tri
 
 ### Démos
 [GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo)
