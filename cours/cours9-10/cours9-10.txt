@@ -11,5 +11,3 @@ Algorithme: Structure de données
 Technique de recherche:
 Notation "O" (mesurer la performance de l'algorithme --> temps, espace)
 -> évaluation avant d'écrire le code
-
-1-Recherche
