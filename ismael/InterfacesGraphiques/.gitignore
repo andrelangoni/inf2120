@@ -3,7 +3,7 @@
 *.class
 
 # Mobile Tools for Java (J2ME)
-*.mtj.tmp/
+.mtj.tmp/
 
 # Package Files #
 *.jar
@@ -15,10 +15,6 @@ hs_err_pid*
 
 # IntelliJ IDEA files
 *.iml
-*.idea/
+.idea/
+out/
 
-# Demos
-INF2120-Demo-master/
-
-# Demo 6 / TP3
-#demos/demo6-Synthetiseur
