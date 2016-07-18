@@ -4,6 +4,10 @@ public class Main {
   private static ABR<Integer> arbre = new ABR<>();
 
   public static void main(String[] args) {
+    abr();
+  } // main()
+
+  private static void abr() {
     // Attention erreur dans l'enonce
     // Echanger 3 et 2
     Integer deux = 2;
@@ -31,7 +35,7 @@ public class Main {
     supprimer(huit);
     supprimer(dix);
     System.out.println();
-  } // main()
+  }
 
   private static void supprimer(Integer deux) {
     System.out.println("Supression de " + String.valueOf(deux));

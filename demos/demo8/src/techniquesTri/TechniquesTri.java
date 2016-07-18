@@ -13,7 +13,8 @@ import java.util.Arrays;
  * @version Avril 2011
  *          Modifié en Avril 2014
  */
-public class TechniquesTri<T extends Comparable<T>> {
+@SuppressWarnings("WeakerAccess")
+public class   TechniquesTri<T extends Comparable<T>> {
 
   /**
    * Cette méthode trie les éléments du tableau selon la stratégie
@@ -27,7 +28,6 @@ public class TechniquesTri<T extends Comparable<T>> {
    * @param tableauAtrier Le tableau à trier
    */
   public void triSelection(T[] tableauAtrier) {
-
     int minIndice;
     T temp;
 
@@ -37,18 +37,20 @@ public class TechniquesTri<T extends Comparable<T>> {
       for (int j = i + 1; j < tableauAtrier.length; j++) {
         if (tableauAtrier[j].compareTo(tableauAtrier[minIndice]) < 0) {
           minIndice = j;
-        }
-      }
-      // Échanger le premier élément non trié et le plus petit élément
-      temp = tableauAtrier[minIndice];
-      tableauAtrier[minIndice] = tableauAtrier[i];
-      tableauAtrier[i] = temp;
+        } // if
+      } // for
 
-      // Affiche le contenu du tableau après itération de la boucle interne
-      System.out.println(" Itération  " + (i + 1) + " : " + Arrays.asList(tableauAtrier));
-    }
+      if (minIndice != i) {
+        // Échanger le premier élément non trié et le plus petit élément
+        temp = tableauAtrier[minIndice];
+        tableauAtrier[minIndice] = tableauAtrier[i];
+        tableauAtrier[i] = temp;
+        // Affiche le contenu du tableau après itération de la boucle interne
+        System.out.println(" Itération  " + (i + 1) + " : " + Arrays.asList(tableauAtrier));
+      } // if
+    } // for
 
-  }
+  } // triSelection()
 
   /**
    * Cette méthode trie les éléments du tableau selon la stratégie
@@ -201,7 +203,7 @@ public class TechniquesTri<T extends Comparable<T>> {
   // Appel de main pour tester les différentes techniques de tri
   public static void main(String[] args) {
 
-    TechniquesTri<Integer> trieuse = new TechniquesTri<Integer>();
+    TechniquesTri<Integer> trieuse = new TechniquesTri<>();
 
     //Integer [] tableauAtrier = new Integer[]{9, 6, 8, 12, 3, 1, 7};
     Integer[] tableauAtrier = new Integer[]{51, 8, 21, 52, 26, 28, 57, 3, 99, 46, 38, 16, 34, 42, 68};
