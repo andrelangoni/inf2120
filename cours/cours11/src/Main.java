@@ -1,8 +1,12 @@
-import java.util.Arrays;
+import javax.swing.*;
 
 public class Main {
   public static void main(String[] args) {
-
+    JFrame frame = new JFrame();
+    frame.setSize(500, 500);
+    BB bb = new BB();
+    frame.add(bb);
+    frame.setVisible(true);
   }
 
   public static <E extends Comparable> void triRapide_R(E[] tab, int debut, int fin) {

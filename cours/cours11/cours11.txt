@@ -10,3 +10,17 @@ récursif : diviser le tableau en deux
 -autre technique : choix de la position
 -moyen : O(n log(n))
 -pire : O(n^2)
+
+interfaces graphiques custom
+panneau : awt - canvas
+swing - Jpanel
+- méthode paint()
+
+public class BB extends JPanel {
+    @Override
+    public void paint(Graphics g) {
+        g.draw();
+    }
+}
+
+MouseListener
