@@ -260,8 +260,8 @@ public class TechniquesTri<T extends Comparable<T>> {
     System.out.println("***************************************");
 
 
-    //tableauAtrier = new Integer[]{90, 65, 7, 305, 120, 110, 8};
-    tableauAtrier = new Integer[]{51, 8, 21, 52, 26, 28, 57, 3, 99, 46, 38, 16, 34, 42, 68};
+    tableauAtrier = new Integer[]{90, 65, 7, 305, 120, 110, 8};
+    //tableauAtrier = new Integer[]{51, 8, 21, 52, 26, 28, 57, 3, 99, 46, 38, 16, 34, 42, 68};
     System.out.println("***************************************");
     System.out.println("|        Début Tri QuickSort          |");
     System.out.println("***************************************");
