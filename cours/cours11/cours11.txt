@@ -1,5 +1,4 @@
 Cours 11
-Révision Final
 tri rapide ou quicksort
 récursif : diviser le tableau en deux
 -pivot
@@ -24,3 +23,54 @@ public class BB extends JPanel {
 }
 
 MouseListener
+
+Révision Final - pas récapitulatif
+cours 7 à 11
+cours 7
+classes Function : Supplier, Consumer, ...
+notation lambda,
+x -> x + 1 (fonction)
+stream se sert des fonctions
+filter, sorted, map, foreach, iterate
+pas de routine pour nombres premiers
+
+cours 8
+GUI : Swing - Composante, contenant, listener
+JTextField, JLabel, JButton, JPanel, JFrame, ...
+Layout : BorderLayout, GridLayout, FlowLayout
+Listener, Event,
+
+cours 9
+cours 9 et 10
+comparaison avec equals(), compareTo(),type extends Comparable
+
+connaître l'ordre associé à chaque algorithme
+type, complexité/ordre temporelle
+connaître l'algorithme pour les 2 types de recherches
+recherche linéaire O(n),
+recherche binaire O(log(n))
+
+arbre binaire de recherche
+fouille*
+insertion*
+suppression*
+* ordre O(log(n))
+parcours infixe, préfixe, (suffixe ou postfixe)
+
+cours 10
+tri (compareTo())
+- code
+- trace
+- partition
+meilleur = 1
+moyen = 2
+pire = 3
+sélection
+1 = n^2, 2 = n^2, 3 = n^2
+insertion
+n, n^2 ,n^2
+bulle
+n, n^2 ,n^2
+tri rapide (quicksort)
+n log(n), n log(n), n^2
+
