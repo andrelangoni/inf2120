@@ -93,4 +93,23 @@ public class ABR<E extends Comparable<E>> {
 
     return resultat;
   } // supprimer()
+
+  public int recherche(ABR<E> racine, E element) {
+    int hauteur = 0; // hauteur de l'element dans l'arbre
+    int direction = element.compareTo(racine._element);
+
+    if (direction < 0) {
+      if (racine._gauche != null) {
+        hauteur++;
+        hauteur += recherche(racine._gauche, element);
+      } // if
+    } else if (direction > 0) {
+      if (racine._droite != null) {
+        hauteur++;
+        hauteur += recherche(racine._droite, element);
+      } // if
+    } //else { l'element est trouve }
+
+    return hauteur;
+  } // recherche()
 } // ABR
