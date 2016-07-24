@@ -19,3 +19,12 @@
 
 ### Examens
 [Solutions](https://github.com/charlesfranciscodev/inf2120/tree/master/examens/)
+
+### Liens utiles
+[JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - Java Development Kit
+
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) - environnement de développement Java
+
+[Git](https://git-scm.com/) - système de gestion de versions
+
+[CodinGame](https://www.codingame.com/start) - Play with Programming
