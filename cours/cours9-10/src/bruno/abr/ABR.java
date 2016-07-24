@@ -28,85 +28,85 @@ public class ABR<E extends Comparable<E>> {
   } // taille()
 
   /** Affiche les elements en ordre.*/
-  public static void parcoursInfixe(ABR racine) {
-    if (racine != null) {
-      parcoursInfixe(racine._gauche);
-      System.out.print(racine._element + " ");
-      parcoursInfixe(racine._droite);
+  public static void parcoursInfixe(ABR arbre) {
+    if (arbre != null) {
+      parcoursInfixe(arbre._gauche);
+      System.out.print(arbre._element + " ");
+      parcoursInfixe(arbre._droite);
     } // if
   } // parcoursInfixe()
 
-  public static void parcoursPrefixe(ABR racine) {
-    if (racine != null) {
-      System.out.print(racine._element + " ");
-      parcoursPrefixe(racine._gauche);
-      parcoursPrefixe(racine._droite);
+  public static void parcoursPrefixe(ABR arbre) {
+    if (arbre != null) {
+      System.out.print(arbre._element + " ");
+      parcoursPrefixe(arbre._gauche);
+      parcoursPrefixe(arbre._droite);
     } // if
   } // parcoursPrefixe()
 
-  public static void parcoursSuffixe(ABR racine) {
-    if (racine != null) {
-      parcoursSuffixe(racine._gauche);
-      parcoursSuffixe(racine._droite);
-      System.out.print(racine._element + " ");
+  public static void parcoursSuffixe(ABR arbre) {
+    if (arbre != null) {
+      parcoursSuffixe(arbre._gauche);
+      parcoursSuffixe(arbre._droite);
+      System.out.print(arbre._element + " ");
     } // if
   } // parcoursSuffixe()
 
-  public static int hauteur(ABR racine) {
+  public static int hauteur(ABR arbre) {
     int hauteur = -1;
-    if (racine != null) {
-      hauteur = 1 + Math.max(hauteur(racine._gauche), hauteur(racine._droite));
+    if (arbre != null) {
+      hauteur = 1 + Math.max(hauteur(arbre._gauche), hauteur(arbre._droite));
     } // if
     return hauteur;
   } // hauteur()
 
-  public E elementPlusAGauche(ABR<E> racine) {
-    return (racine._gauche == null) ? racine._element : elementPlusAGauche(racine._gauche);
+  public E elementPlusAGauche(ABR<E> arbre) {
+    return (arbre._gauche == null) ? arbre._element : elementPlusAGauche(arbre._gauche);
   } // elementPlusAGauche()
 
-  public ABR<E> supprimer(ABR<E> racine, E element) {
-    ABR<E> resultat = racine;
-    int direction = element.compareTo(racine._element);
+  public ABR<E> supprimer(ABR<E> arbre, E element) {
+    ABR<E> resultat = arbre;
+    int direction = element.compareTo(arbre._element);
 
     if (direction < 0) {
-      if (racine._gauche != null) {
-        racine._gauche = supprimer(racine._gauche, element);
+      if (arbre._gauche != null) {
+        arbre._gauche = supprimer(arbre._gauche, element);
       } // if
     } else if (direction > 0) {
-      if (racine._droite != null) {
-        racine._droite = supprimer(racine._droite, element);
+      if (arbre._droite != null) {
+        arbre._droite = supprimer(arbre._droite, element);
       } // if
     } else {
       // supression (quand l'élément est trouvé)
       // 4 cas possibles
       // 2 premier cas (2 null ou gauche est null)
       // le noeud parent est remplacé par le noeud enfant
-      if (racine._gauche == null) {
-        resultat = racine._droite;
-      } else if (racine._droite == null) {
-        resultat = racine._gauche;
+      if (arbre._gauche == null) {
+        resultat = arbre._droite;
+      } else if (arbre._droite == null) {
+        resultat = arbre._gauche;
       } else {
-        racine._element = elementPlusAGauche(racine._droite);
-        racine._droite = supprimer(racine._droite, racine._element);
+        arbre._element = elementPlusAGauche(arbre._droite);
+        arbre._droite = supprimer(arbre._droite, arbre._element);
       } // else
     } // else
 
     return resultat;
   } // supprimer()
 
-  public int recherche(ABR<E> racine, E element) {
+  public int recherche(ABR<E> arbre, E element) {
     int hauteur = 0; // hauteur de l'element dans l'arbre
-    int direction = element.compareTo(racine._element);
+    int direction = element.compareTo(arbre._element);
 
     if (direction < 0) {
-      if (racine._gauche != null) {
+      if (arbre._gauche != null) {
         hauteur++;
-        hauteur += recherche(racine._gauche, element);
+        hauteur += recherche(arbre._gauche, element);
       } // if
     } else if (direction > 0) {
-      if (racine._droite != null) {
+      if (arbre._droite != null) {
         hauteur++;
-        hauteur += recherche(racine._droite, element);
+        hauteur += recherche(arbre._droite, element);
       } // if
     } //else { l'element est trouve }
 
