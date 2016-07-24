@@ -18,4 +18,4 @@
 [GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo)
 
 ### Examens
-[Intra - Solutions](https://github.com/charlesfranciscodev/inf2120/tree/master/examens/intra-solutions)
+[Solutions](https://github.com/charlesfranciscodev/inf2120/tree/master/examens/)
