@@ -1,9 +1,12 @@
 package bruno.abr;
 
+import bruno.test.ABR2;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class TestABR {
   private ABR<String> racine = new ABR<>("nappe");
@@ -53,4 +56,91 @@ public class TestABR {
     assertEquals(3, racine.recherche(racine, "serpent"));
     assertEquals(3, racine.recherche(racine, "lune"));
   } // recherche()
-} // racineTest
+
+  @Test
+  public void nbNoeuds() throws Exception {
+    System.out.println("nbNoeuds()");
+    assertEquals(10, ABR.nbNoeuds(racine));
+  } // nbNoeuds()
+
+  @Test
+  public void nbFeuilles() throws Exception {
+    System.out.println("nbFeuilles()");
+    assertEquals(3, ABR.nbFeuilles(racine));
+  } // nbFeuilles()
+
+  @Test
+  public void nbNoeuds1Enfant() throws Exception {
+    System.out.println("nbNoeuds1Enfant()");
+    assertEquals(5, ABR.nbNoeuds1Enfant(racine));
+  } //nbNoeuds1Enfant()
+
+  @Test
+  public void nbNoeuds2Enfants() throws Exception {
+    System.out.println("nbNoeuds2Enfants()");
+    assertEquals(2, ABR.nbNoeuds2Enfants(racine));
+  } // nbNoeuds2Enfants()
+
+  @Test
+  public void nbNoeudsSuperieursOuEgaux() throws Exception {
+    System.out.println("nbNoeudsSuperieursOuEgaux()");
+    assertEquals(4, racine.nbNoeudsSuperieursOuEgaux(racine, "nappe"));
+    assertEquals(6, racine.nbNoeudsSuperieursOuEgaux(racine, "lune"));
+    assertEquals(8, racine.nbNoeudsSuperieursOuEgaux(racine, "couche"));
+    assertEquals(10, racine.nbNoeudsSuperieursOuEgaux(racine, "balle"));
+    assertEquals(1, racine.nbNoeudsSuperieursOuEgaux(racine, "tarte"));
+    assertEquals(10, racine.nbNoeudsSuperieursOuEgaux(racine, "arbre"));
+    assertEquals(0, racine.nbNoeudsSuperieursOuEgaux(racine, "zoo"));
+  } // nbNoeudsSuperieursOuEgaux()
+
+  @Test
+  public void nbNoeudsAvecPrefixe() throws Exception {
+    System.out.println("nbNoeudsAvecPrefixe()");
+    assertEquals(2, nbNoeudsAvecPrefixe(racine, "b"));
+    assertEquals(1, nbNoeudsAvecPrefixe(racine, "s"));
+    assertEquals(0, nbNoeudsAvecPrefixe(racine, "a"));
+  } // nbNoeudsAvecPrefixe()
+
+  private int nbNoeudsAvecPrefixe(ABR<String> arbre, String prefixe) {
+    int nbNoeuds = 0; // hauteur de l'element dans l'arbre
+
+    String sousChaine = arbre._element.substring(0, prefixe.length());
+    if (prefixe.equals(sousChaine)) {
+      nbNoeuds++;
+    } // if
+
+    if (arbre._droite != null) {
+      nbNoeuds += nbNoeudsAvecPrefixe(arbre._droite, prefixe);
+    } // if
+    if (arbre._gauche != null) {
+      nbNoeuds += nbNoeudsAvecPrefixe(arbre._gauche, prefixe);
+    } // if
+
+    return nbNoeuds;
+  } // nbNoeudsAvecPrefixe()
+
+  @Test
+  public void estABR() throws Exception {
+    System.out.println("estABR()");
+    assertTrue(racine.estABR(racine));
+
+    ABR2<String> arbre = new ABR2<>("A");
+    arbre._gauche = new ABR2<>("B");
+    arbre._droite = new ABR2<>("C");
+    assertFalse(arbre.estABR(arbre));
+
+    ABR2<String> arbre2 = new ABR2<>("C");
+    arbre2._gauche = new ABR2<>("A");
+    arbre2._droite = new ABR2<>("B");
+    assertFalse(arbre2.estABR(arbre2));
+
+    ABR2<String> arbre3 = new ABR2<>("C");
+    ABR2<String> arbre4 = new ABR2<>("B");
+    arbre4._gauche = new ABR2<>("A");
+    arbre3._gauche = arbre4;
+    ABR2<String> arbre5 = new ABR2<>("E");
+    arbre3._droite = arbre5;
+    arbre5._droite = new ABR2<>("D");
+    assertFalse(arbre3.estABR(arbre3));
+  } // estABR()
+} // TestABR
