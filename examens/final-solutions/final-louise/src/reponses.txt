@@ -1,0 +1,28 @@
+9. tri par insertion car la boucle interne ne s'executera jamais (aucun element inferieur au debut)
+10. car la recherche ordonnee s'arrete quand le nombre recherche est plus grand que le dernier nombre lu
+(cas ou le nombre est introuvable)
+11. car habituellement les elements d'une liste chainee ne peuvent pas etre accedes par leur indice ou
+sinon il faudrait utiliser un compteur et parcourir un noeud a la fois, ce qui est tres lent.
+
+12. e) feuille: noeud sans enfants (gauche et droite sont null)
+noeud: structure de base de l'abr avec deux pointeurs vers la gauche et la droite et l'element
+hauteur: nombre de niveaux dans l'arbre (maximum de recursion possible avec d'atteindre null)
+racine: noeud initial de l'arbre
+sous-arbre: noeud enfant d'un autre arbre (soit a gauche, soit a droite)
+
+arbre (en ordre d'insertion): {25, 39, 30, 17, 10,
+                               15, 27, 100, 12, 5,
+                               37, 200, 35, 34};
+f) nombre de
+feuilles: 5
+noeuds: 14
+hauteur: 5
+
+g) 3 (hauteur minimale d'une feuille)
+h) 6 (hauteur de l'arbre)
+
+Les questions de codes pour l'arbre binaire sont dans le depot GitHub inf2120 aux chemins
+
+https://github.com/charlesfranciscodev/inf2120/tree/master/cours/cours9-10/src/bruno
+/abr et
+/test
