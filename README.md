@@ -1,4 +1,4 @@
-## UQAM - Baccalauréat en informatique et génie logiciel
+## UQAM
 [INF2120 Programmation II](http://www.etudier.uqam.ca/cours?sigle=INF2120&p=7416) (Java)
 
 Été 2016
