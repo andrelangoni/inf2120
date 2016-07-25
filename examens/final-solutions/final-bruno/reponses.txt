@@ -1,3 +1,31 @@
+Numéro 1
+
+a) Insertion (tri du sous-tableau)
+11 8 6 3 10 1 9 5 7 2 14 4 15 13 12
+8 11 6 3 10 1 9 5 7 2 14 4 15 13 12
+6 8 11 3 10 1 9 5 7 2 14 4 15 13 12
+3 6 8 11 10 1 9 5 7 2 14 4 15 13 12
+3 6 8 10 11 1 9 5 7 2 14 4 15 13 12
+
+
+b) Sélection (trouver le minimum)
+11 8 6 3 10 1 9 5 7 2 14 4 15 13 12
+1 8 6 3 10 11 9 5 7 2 14 4 15 13 12
+1 2 6 3 10 11 9 5 7 8 14 4 15 13 12
+1 2 3 6 10 11 9 5 7 8 14 4 15 13 12
+1 2 3 4 10 11 9 5 7 8 14 6 15 13 12
+
+c) Bulle (comparer la case courante et la case suivante)
+11 8 6 3 10 1 9 5 7 2 14 4 15 13 12
+8 6 3 10 1 9 5 7 2 11 4 14 13 12 15
+6 3 8 1 9 5 7 2 10 4 11 13 12 14 15
+3 6 1 8 5 7 2 9 4 10 11 12 13 14 15
+3 1 6 5 7 2 8 4 9 10 11 12 13 14 15
+
+d) Quicksort (séparer le tableau en deux partitions)
+(11) 8 6 3 10 1 9 5 7 2 14 4 15 13 12
+4 8 6 3 10 1 9 5 7 2 (11) 14 15 13 12
+
 Numéro 2
 a) Les "Component" permettent à l'utilisateur d'interagir avec l'application et de fournir de l'information.
 b) Les "Container" sont les composants de base de toute application Swing. On peut ajouter des "Component" a un
