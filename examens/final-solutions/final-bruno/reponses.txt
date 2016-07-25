@@ -56,6 +56,12 @@ Numéro 3 a)
                        +--+
                           14
 
+supression
+3 cas
+1 - feuille - on l'enlève directement
+2 - 1 seul fils - le fils remplace l`élément
+3 - l`élément a 2 fils ou plus - on prend le minimum des fils à droite
+
 b)
 
                    11
