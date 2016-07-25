@@ -16,7 +16,7 @@ public class ABR<E extends Comparable<E>> {
     int direction = element.compareTo(_element);
     if (direction <= 0) {
       _gauche = (_gauche == null) ? new ABR<>(element) : _gauche.inserer(element);
-    } else if (direction > 0) {
+    } else  {
       _droite = (_droite == null) ? new ABR<>(element) : _droite.inserer(element);
     } // else if
     return this;
@@ -94,6 +94,8 @@ public class ABR<E extends Comparable<E>> {
     return resultat;
   } // supprimer()
 
+  boolean trouve = true;
+
   public int recherche(ABR<E> arbre, E element) {
     int hauteur = 0; // hauteur de l'element dans l'arbre
     int direction = element.compareTo(arbre._element);
@@ -102,15 +104,23 @@ public class ABR<E extends Comparable<E>> {
       if (arbre._gauche != null) {
         hauteur++;
         hauteur += recherche(arbre._gauche, element);
-      } // if
+      } else {
+        trouve = false;
+      } // else
     } else if (direction > 0) {
       if (arbre._droite != null) {
         hauteur++;
         hauteur += recherche(arbre._droite, element);
-      } // if
-    } //else { l'element est trouve }
+      } else {
+        trouve = false;
+      } // else
+    } // else if
 
-    return hauteur;
+    if (trouve) {
+      return hauteur;
+    } // if
+
+    return 0;
   } // recherche()
 
   /** Calcul du nombre de noeuds.*/

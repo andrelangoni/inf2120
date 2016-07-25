@@ -50,11 +50,13 @@ public class TestABR {
 
   @Test
   public void recherche() throws Exception {
+    System.out.println("recherche()");
     assertEquals(0, racine.recherche(racine, "nappe"));
     assertEquals(5, racine.recherche(racine, "couche"));
     assertEquals(4, racine.recherche(racine, "manchot"));
     assertEquals(3, racine.recherche(racine, "serpent"));
     assertEquals(3, racine.recherche(racine, "lune"));
+    assertEquals(0, racine.recherche(racine, "introuvable"));
   } // recherche()
 
   @Test
