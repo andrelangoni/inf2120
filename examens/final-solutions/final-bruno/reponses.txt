@@ -8,14 +8,14 @@ a) Insertion (tri du sous-tableau)
 3 6 8 10 11 1 9 5 7 2 14 4 15 13 12
 
 
-b) Sélection (trouver le minimum)
+b) Sélection (placer le minimum vers le début)
 11 8 6 3 10 1 9 5 7 2 14 4 15 13 12
 1 8 6 3 10 11 9 5 7 2 14 4 15 13 12
 1 2 6 3 10 11 9 5 7 8 14 4 15 13 12
 1 2 3 6 10 11 9 5 7 8 14 4 15 13 12
 1 2 3 4 10 11 9 5 7 8 14 6 15 13 12
 
-c) Bulle (comparer la case courante et la case suivante)
+c) Bulle (comparer la case courante et la case suivante, placer le maximum vers la fin)
 11 8 6 3 10 1 9 5 7 2 14 4 15 13 12
 8 6 3 10 1 9 5 7 2 11 4 14 13 12 15
 6 3 8 1 9 5 7 2 10 4 11 13 12 14 15
@@ -28,14 +28,18 @@ d) Quicksort (séparer le tableau en deux partitions)
 
 Numéro 2
 a) Les "Component" permettent à l'utilisateur d'interagir avec l'application et de fournir de l'information.
+Ils déclenchent des événements ("Event").
+
 b) Les "Container" sont les composants de base de toute application Swing. On peut ajouter des "Component" a un
-"Container".
-d) La disposition spatiale des "Components" dans le "Container" est habituellement fait à l'aide d'un
-"LayoutManager" ou "Layout".
+"Container". C'est sur le "Container" qu'on ajoute des "Component".
 
 c) Un "Event" sert à informer le "Listener" que quelquechose est arriver à un "Component" dans le "GUI".
 Il inclut des informations sur l'origine de l'évenement (ou la source, quel "Component") et le type d'évenement
 (ex.: clique; touche du clavier pesée).
+
+d) La disposition spatiale des "Components" dans le "Container" est habituellement fait à l'aide d'un
+"LayoutManager" ou "Layout". Il sert à changer la mise en page et arranger le style des "Component".
+
 e) Pour recevoir un "Action Event" un "Listener" doit être ajouté a un "Component".
 Les "Components" génèrent un "Event" qui notifie le "Listener" qu'un évènement est arrivé. Le programme
 peut alors réagir en conséquence.
