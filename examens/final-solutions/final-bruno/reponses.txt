@@ -1,0 +1,46 @@
+Numéro 2
+a) Les "Component" permettent à l'utilisateur d'interagir avec l'application et de fournir de l'information.
+b) Les "Container" sont les composants de base de toute application Swing. On peut ajouter des "Component" a un
+"Container".
+d) La disposition spatiale des "Components" dans le "Container" est habituellement fait à l'aide d'un
+"LayoutManager" ou "Layout".
+
+c) Un "Event" sert à informer le "Listener" que quelquechose est arriver à un "Component" dans le "GUI".
+Il inclut des informations sur l'origine de l'évenement (ou la source, quel "Component") et le type d'évenement
+(ex.: clique; touche du clavier pesée).
+e) Pour recevoir un "Action Event" un "Listener" doit être ajouté a un "Component".
+Les "Components" génèrent un "Event" qui notifie le "Listener" qu'un évènement est arrivé. Le programme
+peut alors réagir en conséquence.
+
+Numéro 3 a)
+
+                   11
+          +--------+ +--------+
+          9                   17
+    +-----+             +-----+ +-----+
+    5                   15            21
++--+ +--+            +--+          +--+ +--+
+3       7            13            19      23
+                       +--+
+                          14
+
+b)
+
+                   11
+          +--------+ +--------+
+          9                   17
+    +-----+             +-----+ +-----+
+    5                   15            21
++--+ +--+                          +--+ +--+
+3       7                          19      23
+
+c)
+
+                   13
+          +--------+ +--------+
+          9                   17
+    +-----+             +-----+ +-----+
+    5                   15            21
++--+ +--+                          +--+ +--+
+3       7                          19      23
+
