@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Arrays;
 
 public class Main {
   public static void main(String[] args) {
@@ -24,12 +25,15 @@ public class Main {
           --j;
         } // while()
 
+        System.out.println("Echange " + String.valueOf(tab[i]) + " <--> " + String.valueOf(tab[j]));
         E temp = tab[i];
         tab[i] = tab[j];
         tab[j] = temp;
         ++i;
         --j;
       } // while
+
+      System.out.println(Arrays.toString(tab));
 
       triRapide_R(tab, debut, i - 1);
       triRapide_R(tab, i, fin);
