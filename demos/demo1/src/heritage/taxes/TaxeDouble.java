@@ -11,6 +11,6 @@ public class TaxeDouble extends Bien {
 
     @Override
     public double prix() {
-        return getPrixEtalage() * TAXE_DOUBLE;
+        return getPrixEtalage() * TaxeSimple.TAXE_SIMPLE * TAXE_DOUBLE;
     } // prix()
 } // TaxeDouble
