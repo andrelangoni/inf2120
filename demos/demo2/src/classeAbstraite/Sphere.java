@@ -1,24 +1,22 @@
 package classeAbstraite;
 
-public class Sphere extends Forme3D {
-    private double rayon;
+class Sphere extends Forme3D {
+  private double rayon;
 
-    public Sphere(double rayon) {
-        setRayon(rayon);
-    } // classeAbstraite.Sphere()
+  Sphere(double rayon) {
+    setRayon(rayon);
+  } // Sphere()
 
-    public double getRayon() {
-        return rayon;
-    } // getRayon()
+  private void setRayon(double rayon) {
+    if (rayon >= 0) {
+      this.rayon = rayon;
+    } else {
+      System.err.println("Erreur: rayon invalide");
+    } // else
+  } // setRayon()
 
-    public void setRayon(double rayon) {
-        if (rayon >= 0) {
-            this.rayon = rayon;
-        } // if
-    } // setRayon()
-
-    @Override
-    double volume() {
-        return 4d/3d * Math.PI * Math.pow(rayon, 3);
-    } // volume()
-} // classeAbstraite.Sphere
+  @Override
+  double volume() {
+    return 4 * Math.PI / 3  * Math.pow(rayon, 3);
+  } // volume()
+} // Sphere

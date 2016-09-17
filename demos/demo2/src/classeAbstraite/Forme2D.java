@@ -1,11 +1,9 @@
 package classeAbstraite;
 
-public abstract class Forme2D {
+abstract class Forme2D {
 
-    public Forme2D() {
+  Forme2D() {}
 
-    } // classeAbstraite.Forme2D()
+  abstract double aire();
 
-    abstract double aire();
-
-} // classeAbstraite.Forme2D
+} // Forme2D

@@ -1,36 +1,32 @@
 package classeAbstraite;
 
-public class Rectangle extends Forme2D {
-    private double hauteur;
-    private double largeur;
+class Rectangle extends Forme2D {
+  private double hauteur;
+  private double largeur;
 
-    public Rectangle(double hauteur, double largeur) {
-        setHauteur(hauteur);
-        setLargeur(largeur);
-    } // classeAbstraite.Rectangle()
+  Rectangle(double hauteur, double largeur) {
+    setHauteur(hauteur);
+    setLargeur(largeur);
+  } // Rectangle()
 
-    public double getHauteur() {
-        return hauteur;
-    } // getHauteur()
+  private void setHauteur(double hauteur) {
+    if (hauteur >= 0) {
+      this.hauteur = hauteur;
+    } else {
+      System.err.println("Erreur: hauteur invalide");
+    } // else
+  } // setHauteur()
 
-    public void setHauteur(double hauteur) {
-        if (hauteur >= 0) {
-            this.hauteur = hauteur;
-        } // if
-    } // setHauteur()
+  private void setLargeur(double largeur) {
+    if (largeur >= 0) {
+      this.largeur = largeur;
+    } else {
+      System.err.println("Erreur: largeur invalide");
+    } // else
+  } // setLargeur()
 
-    public double getLargeur() {
-        return largeur;
-    } // getLargeur()
-
-    public void setLargeur(double largeur) {
-        if (largeur >= 0) {
-            this.largeur = largeur;
-        } // if
-    } // setLargeur()
-
-    @Override
-    double aire() {
-        return hauteur * largeur;
-    } // aire()
-} // classeAbstraite.Rectangle
+  @Override
+  double aire() {
+    return hauteur * largeur;
+  } // aire()
+} // Rectangle

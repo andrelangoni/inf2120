@@ -1,24 +1,22 @@
 package classeAbstraite;
 
-public class Cercle extends Forme2D {
-    private double rayon;
+class Cercle extends Forme2D {
+  private double rayon;
 
-    public Cercle(double rayon) {
-        setRayon(rayon);
-    } // classeAbstraite.Cercle()
+  Cercle(double rayon) {
+    setRayon(rayon);
+  } // Cercle()
 
-    public double getRayon() {
-        return rayon;
-    } // getRayon()
+  private void setRayon(double rayon) {
+    if (rayon >= 0) {
+      this.rayon = rayon;
+    } else {
+      System.err.println("Erreur: rayon invalide");
+    } // else
+  } // setRayon()
 
-    public void setRayon(double rayon) {
-        if (rayon >= 0) {
-            this.rayon = rayon;
-        } // if
-    } // setRayon()
-
-    @Override
-    double aire() {
-        return Math.PI * Math.pow(rayon, 2);
-    } // aire()
-} // classeAbstraite.Cercle
+  @Override
+  double aire() {
+    return Math.PI * Math.pow(rayon, 2);
+  } // aire()
+} // Cercle
