@@ -17,6 +17,9 @@
 ### Démos
 [GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo)
 
+### Travaux pratiques
+À venir...
+
 ### Examens
 [Solutions](https://github.com/charlesfranciscodev/inf2120/tree/master/examens/)
 
@@ -27,4 +30,4 @@
 
 [Git](https://git-scm.com/) - système de gestion de versions
 
-[CodinGame](https://www.codingame.com/start) - Play with Programming
+**Note finale: 94/100 - A+**
