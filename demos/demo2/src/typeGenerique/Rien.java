@@ -1,20 +1,17 @@
 package typeGenerique;
 
-public class Rien <T> extends PeutEtre<T> {
+class Rien<T> extends PeutEtre<T> {
+  Rien() {}
 
-    public Rien() {
+  public boolean estQQChose() {
+    return false;
+  } // estQQChose()
 
-    } // Rien()
+  public boolean estRien() {
+    return true;
+  } // estRien()
 
-    public boolean estQQChose() {
-        return false;
-    } // estQQChose()
-
-    public boolean estRien() {
-        return true;
-    } // estQQChose()
-
-    public T qQChose() throws ARien {
-        throw new ARien();
-    } // qQChose()
+  public T qQChose() throws ARien {
+    throw new ARien();
+  } // qQChose()
 } // Rien

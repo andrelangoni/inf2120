@@ -1,21 +1,21 @@
 package typeGenerique;
 
-public class QQChose <T> extends PeutEtre<T> {
-    private T valeur;
+class QQChose<T> extends PeutEtre<T> {
+  private T valeur;
 
-    public QQChose(T valeur) {
-        this.valeur = valeur;
-    } // QQChose(
+  QQChose(T valeur) {
+    this.valeur = valeur;
+  } // QQChose()
 
-    public boolean estQQChose() {
-        return true;
-    } // estQQChose()
+  public boolean estQQChose() {
+    return true;
+  } // estQQChose()
 
-    public boolean estRien() {
-        return false;
-    } // estRien()
+  public boolean estRien() {
+    return false;
+  } // estRien()
 
-    public T qQChose() throws ARien {
-        return valeur;
-    } // qQChose()
+  public T qQChose() {
+    return valeur;
+  } // qQChose()
 } // QQChose
