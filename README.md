@@ -14,20 +14,12 @@
 9. recherche, arbre binaire de recherche
 10. tri
 
-### Démos
-[GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo)
-
 ### Travaux pratiques
 À venir...
-
-### Examens
-[Solutions](https://github.com/charlesfranciscodev/inf2120/tree/master/examens/)
 
 ### Liens utiles
 [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - Java Development Kit
 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) - environnement de développement Java
-
-[Git](https://git-scm.com/) - système de gestion de versions
 
 **Note finale: 94/100 - A+**
