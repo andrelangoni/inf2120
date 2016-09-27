@@ -25,4 +25,4 @@
 **Note finale: 94/100 - A+**
 
 ### Remerciements
-Merci à [GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo) pour la [demo3 - File](/demos/demo3) et [demo4 - JUnit](/demos/demo4-3).
+Merci à [GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo) pour la [demo3 - File](/demos/demo3) et [demo4 - JUnit](/demos/demo4-4).
