@@ -1,47 +1,46 @@
-public class Pile<E> {
-    private int _taille = 0;
-    private Noeud<E> _sommet = null; // pile vide
+class Pile<E> {
+  private int taille = 0; // pile vide au depart
+  private Noeud<E> sommet = null;
 
-    public Pile() {}
+  Pile() {
+  }
 
-    public int taille() { return _taille; }
+  int taille() {
+    return taille;
+  }
 
-    public boolean estVide() {
-        return _sommet == null;
-    }
+  boolean estVide() {
+    return sommet == null;
+  }
 
-    public E sommet() throws PileVide {
-        //_sommet.precedent.element
-/*        Noeud<E> t = _sommet;
-        for (int i = 0; i < 12; ++i) {
-            t = t.precedent;
-        }*/
-        if (estVide()) {
-            throw new PileVide();
-        } // if
-        return _sommet.element;
-    } // tete()
+  E sommet() throws PileVide {
+    if (estVide()) {
+      throw new PileVide();
+    } // if
 
-    public void empiler(E a_element) {
-        _sommet = new Noeud<E>(a_element, _sommet);
-        ++_taille;
-    } // enfiler()
+    return sommet.element;
+  } // tete()
 
-    public void depiler() throws PileVide {
-        if (estVide()) {
-            throw new PileVide();
-        } // if
-        _sommet = _sommet.precedent;
-        --_taille;
-    } // defiler()
+  void empiler(E a_element) {
+    sommet = new Noeud<>(a_element, sommet);
+    ++taille;
+  } // enfiler()
 
-    private class Noeud<E> { // private
-        public E element;
-        public Noeud<E> precedent;
+  void depiler() throws PileVide {
+    if (estVide()) {
+      throw new PileVide();
+    } // if
+    sommet = sommet.precedent;
+    --taille;
+  } // defiler()
 
-        public Noeud(E element, Noeud<E> precedent) {
-            this.element = element;
-            this.precedent = precedent;
-        }
-    }
+  private class Noeud<A> {
+    private A element;
+    private Noeud<A> precedent;
+
+    private Noeud(A element, Noeud<A> precedent) {
+      this.element = element;
+      this.precedent = precedent;
+    } // Noeud()
+  } // Noeud
 } // Pile
