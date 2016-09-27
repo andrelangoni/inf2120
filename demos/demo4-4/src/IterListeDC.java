@@ -4,7 +4,7 @@ class IterListeDC<S> implements Iterator<S> {
   private Noeud<S> courant = null;
 
   IterListeDC(ListeDC<S> liste) {
-    courant = liste._debut;
+    courant = liste.debut;
   } // IterListeDC()
 
   public boolean hasNext() {

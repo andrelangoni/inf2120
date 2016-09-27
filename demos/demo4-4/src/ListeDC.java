@@ -1,49 +1,49 @@
 import java.util.Iterator;
 
 class ListeDC<E> implements Iterable<E> {
-  Noeud<E> _debut = null;
-  private Noeud<E> _fin = null;
-  private int _taille = 0;
+  Noeud<E> debut = null;
+  private Noeud<E> fin = null;
+  private int taille = 0;
 
   ListeDC() {
   }
 
   boolean estVide() {
-    return 0 == _taille;
+    return 0 == taille;
   }
 
   int taille() {
-    return _taille;
+    return taille;
   }
 
-  void ajouter_debut(E a_element) {
-    Noeud<E> nouveau = new Noeud<>(a_element);
+  void ajouter_debut(E element) {
+    Noeud<E> nouveau = new Noeud<>(element);
 
-    if (null == _fin) {
-      _fin = nouveau;
+    if (null == fin) {
+      fin = nouveau;
     } else {
-      _debut.precedent = nouveau;
+      debut.precedent = nouveau;
     }
 
-    nouveau.suivant = _debut;
-    _debut = nouveau;
+    nouveau.suivant = debut;
+    debut = nouveau;
 
-    ++_taille;
+    ++taille;
   }
 
-  void ajouter_fin(E a_element) {
-    Noeud<E> nouveau = new Noeud<>(a_element);
+  void ajouter_fin(E element) {
+    Noeud<E> nouveau = new Noeud<>(element);
 
-    if (null == _debut) {
-      _debut = nouveau;
+    if (null == debut) {
+      debut = nouveau;
     } else {
-      _fin.suivant = nouveau;
+      fin.suivant = nouveau;
     }
 
-    nouveau.precedent = _fin;
-    _fin = nouveau;
+    nouveau.precedent = fin;
+    fin = nouveau;
 
-    ++_taille;
+    ++taille;
   }
 
   E debut() throws EstVide {
@@ -51,7 +51,7 @@ class ListeDC<E> implements Iterable<E> {
       throw new EstVide();
     }
 
-    return _debut.element;
+    return debut.element;
   }
 
   E fin() throws EstVide {
@@ -59,7 +59,7 @@ class ListeDC<E> implements Iterable<E> {
       throw new EstVide();
     }
 
-    return _fin.element;
+    return fin.element;
   }
 
   void supprimer_fin() throws EstVide {
@@ -67,15 +67,15 @@ class ListeDC<E> implements Iterable<E> {
       throw new EstVide();
     }
 
-    _fin = _fin.precedent;
+    fin = fin.precedent;
 
-    if (null == _fin) {
-      _debut = null;
+    if (null == fin) {
+      debut = null;
     } else {
-      _fin.suivant = null;
+      fin.suivant = null;
     }
 
-    --_taille;
+    --taille;
   }
 
   void supprimer_debut() throws EstVide {
@@ -83,15 +83,15 @@ class ListeDC<E> implements Iterable<E> {
       throw new EstVide();
     }
 
-    _debut = _debut.suivant;
+    debut = debut.suivant;
 
-    if (null == _debut) {
-      _fin = null;
+    if (null == debut) {
+      fin = null;
     } else {
-      _debut.precedent = null;
+      debut.precedent = null;
     }
 
-    --_taille;
+    --taille;
   }
 
   public Iterator<E> iterator() {
