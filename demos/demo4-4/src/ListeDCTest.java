@@ -5,12 +5,11 @@ import java.util.Iterator;
 import org.junit.Test;
 
 public class ListeDCTest {
-
-	static final Integer I1 = new Integer( 1 );
-	static final Integer I2 = new Integer( 2 );
-	static final Integer I3 = new Integer( 3 );
-	static final Integer I4 = new Integer( 4 );
-	static final Integer I5 = new Integer( 5 );
+	private static final Integer I1 = 1;
+	private static final Integer I2 = 2;
+	private static final Integer I3 = 3;
+	private static final Integer I4 = 4;
+	private static final Integer I5 = 5;
 	
 	@Test
 	public void testListeDC() {
@@ -238,11 +237,9 @@ public class ListeDCTest {
 
 		ListeDC<Integer> li4 = new ListeDC<>();
 		li4.ajouter_debut( I1 );
-		
-		Iterator<Integer> it4 = li4.iterator();
-		
-		while( it4.hasNext() ){
-			assertEquals( I1, it4.next() );
+
+		for (Integer aLi4 : li4) {
+			assertEquals(I1, aLi4);
 		}
 	}
 }

@@ -1,4 +1,4 @@
-public class EstVide extends Exception {
-  public EstVide() {
+class EstVide extends Exception {
+  EstVide() {
   }
 }
