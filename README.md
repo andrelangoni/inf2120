@@ -14,9 +14,6 @@
 9. recherche, arbre binaire de recherche
 10. tri
 
-### Travaux pratiques
-À venir...
-
 ### Liens utiles
 [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) - Java Development Kit
 
