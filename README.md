@@ -6,8 +6,8 @@
 1. pointeurs, héritage, polymorphisme, visibilité, [classe Object](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
 2. classes abstraites, type générique, enum, [classe Exception](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html)
 3. interfaces
-4. TDA, listes chainées, piles, files
-5. [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), iterator(), [JUnit](http://junit.org/junit4/)
+4. TDA, listes chainées, [piles](/cours/cours4), [files](/demos/demo3)
+5. [ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html), iterator(), [JUnit](/cours/cours4/)
 6. récursion vs itération
 7. fonctions, notation "lambda"
 8. interfaces graphiques
@@ -23,3 +23,6 @@
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) - environnement de développement Java
 
 **Note finale: 94/100 - A+**
+
+### Remerciements
+Merci à [GabrielGamy](https://github.com/GabrielGamy/INF2120-Demo) pour la [demo3 - File](/demos/demo3) et [demo4 - JUnit](/demos/demo4-3).
