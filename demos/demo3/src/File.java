@@ -1,14 +1,4 @@
 class File<T> implements IFile<T> {
-  private class Noeud<A> {
-    A element;
-    Noeud<A> precedent;
-
-    Noeud(A element, Noeud<A> precedent) {
-      this.element = element;
-      this.precedent = precedent;
-    }
-  }
-
   private int taille;
   private Noeud<T> debut;
   private Noeud<T> fin;
@@ -42,8 +32,8 @@ class File<T> implements IFile<T> {
       fin = new Noeud<>(element, null);
       debut = fin;
     } else {
-      fin.precedent = new Noeud<>(element, null);
-      fin = fin.precedent;
+      fin.suivant = new Noeud<>(element, null);
+      fin = fin.suivant;
     }
     ++taille;
   }
@@ -54,7 +44,7 @@ class File<T> implements IFile<T> {
       throw new FileVide("La file est vide");
     }
 
-    debut = debut.precedent;
+    debut = debut.suivant;
 
     if (debut == null)
       fin = null;
@@ -63,16 +53,16 @@ class File<T> implements IFile<T> {
 
   @Override
   public T trouverElement(int position) {
-    int temp = 0;
+    int posActuelle = 0; // position actuelle
     Noeud<T> maillonTemp = debut;
 
     if (position > 0) {
       while (maillonTemp != null) {
-        temp++;
-        if (temp == position) {
+        posActuelle++;
+        if (posActuelle == position) {
           return maillonTemp.element;
         } else {
-          maillonTemp = maillonTemp.precedent;
+          maillonTemp = maillonTemp.suivant;
         } // else
       } // while
     } // if
