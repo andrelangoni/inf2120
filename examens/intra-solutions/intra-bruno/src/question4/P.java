@@ -1,8 +1,6 @@
 package question4;
 
-/**
- * Héritage - Redéfinition de la méthode dePeutEtre()
- */
+/** Heritage - redefinition de la methode dePeutEtre() */
 public class P {
   public static void main(String[] args) {
     PeutEtre[] r = new PeutEtre[5];
@@ -13,6 +11,6 @@ public class P {
     r[4] = new Seulement(3);
     for (int i = 0; i < 5; ++i) {
       System.out.println(r[i].dePeutEtre(0));
-    } // for
-  } // main()
-} // P
+    }
+  }
+}
