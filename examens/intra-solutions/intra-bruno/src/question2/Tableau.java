@@ -2,43 +2,43 @@ package question2;
 
 @SuppressWarnings("WeakerAccess")
 public class Tableau {
-  // tableau à taille fixe. (pas de ArrayList)
+  // tableau a taille fixe. (pas de ArrayList)
   int[] tab;
 
   /**
-   * Construit un Tableau à taille fixe.
+   * Construit un Tableau a taille fixe.
    *
-   * @param taille Nombre d'élément que va contenir le tableau. Le
-   *               comportement du constructeur n'est pas défini si la taille est négative.
+   * @param taille Nombre d'element que va contenir le tableau. Le
+   *               comportement du constructeur n'est pas defini si la taille est negative.
    */
   public Tableau(int taille) {
-    //assert (taille >= 0);
+    assert taille >= 0;
     tab = new int[taille];
   }
 
   /**
-   * Lit un élément du tableau.
+   * Lit un element du tableau.
    *
-   * @param position Une valeur de 0 à taille - 1 indiquant la position de
-   *                 l'élément à lire. Le comportement n'est pas défini si la position est
-   *                 négative ou plus grande ou égal à la taille.
+   * @param position Une valeur de 0 a taille - 1 indiquant la position de
+   *                 l'element a lire. Le comportement n'est pas defini si la position est
+   *                 negative ou plus grande ou egal a la taille.
    * @return La valeur lue.
    */
   public int element(int position) {
-    //assert ((position >= 0) && (position < taille()));
+    assert (position >= 0) && (position < taille());
     return tab[position];
   }
 
   /**
    * Place une valeur dans le tableau.
    *
-   * @param position Une valeur de 0 à taille - 1 indiquant la position de
-   *                 l'élément à assigner. Le comportement n'est pas défini si la position
-   *                 est négative ou plus grande ou égal à la taille.
-   * @param element  Valeur placé dans le tableau.
+   * @param position Une valeur de 0 a taille - 1 indiquant la position de
+   *                 l'element a assigner. Le comportement n'est pas defini si la position
+   *                 est negative ou plus grande ou egal a la taille.
+   * @param element  Valeur place dans le tableau.
    */
   public void assigner(int position, int element) {
-    //assert ((position >= 0) && (position < taille() - 1));
+    assert (position >= 0) && (position < taille());
     tab[position] = element;
   }
 
@@ -56,6 +56,6 @@ public class Tableau {
       System.out.print(String.valueOf(i) + " ");
     } // for
     System.out.println();
-  } // print()
+  }
 
-} // Tableau
+}

@@ -8,14 +8,10 @@ public class Main {
     tableau.assigner(2, 1);
     tableau.assigner(3, 6);
     tableau.assigner(4, 5);
-    println("tableau avant decalage:");
+    System.out.println("tableau avant decalage:");
     tableau.print();
     tableau.decalageGauche(2, 8);
-    println("tableau apres decalage:");
+    System.out.println("tableau apres decalage:");
     tableau.print();
   } // main()
-
-  private static void println(Object o) {
-    System.out.println(o);
-  } // println()
 } // Main
