@@ -2,34 +2,37 @@ package question5;
 
 @SuppressWarnings("WeakerAccess")
 public class Calcule {
-  // Méthode 1 - instanceof
+  public static void main(String[] args) {
+    Carre carre = new Carre(2);
+    Plan plan = new Plan();
+    Sphere sphere = new Sphere(1);
+
+    try {
+      System.out.println("Methode 1 - instanceof");
+      afficheAire(carre);
+      afficheAire(sphere);
+      afficheAire(plan); // erreur
+    } catch (Exception e) {
+      System.out.println("Erreur lors du calcul d'aire");
+    }
+  }
+
+  // Methode 1 - instanceof
   public static double aire(Object o) throws Exception {
     double d;
+
     if (o instanceof Carre) {
       d = ((Carre) o).aire();
     } else if (o instanceof Sphere) {
       d = ((Sphere) o).aire();
     } else {
       throw new Exception();
-    } // else
-    return d;
-  } // aire()
-
-  public static void main(String[] args) {
-    Carre carre = new Carre();
-    Plan plan = new Plan();
-    Sphere sphere = new Sphere();
-    try {
-      println("Méthode 1 - instanceof");
-      println("Aire du carré: " + aire(carre));
-      println("Aire de la sphère: " + aire(sphere));
-      //println(aire(plan)); // erreur
-    } catch (Exception e) {
-      System.out.println("Erreur");
     }
-  } // main()
 
-  public static void println(Object o) {
-    System.out.println(o);
-  } // println()
-} // Calcule
+    return d;
+  }
+
+  public static void afficheAire(Object o) throws Exception {
+    System.out.printf("Aire pour " + o.getClass().getSimpleName() + " : %.3f\n", aire(o));
+  }
+}

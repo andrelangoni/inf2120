@@ -2,8 +2,14 @@ package question5;
 
 @SuppressWarnings("WeakerAccess")
 public class Carre extends Objet2D implements Objet {
+  private double longueur;
+
+  public Carre(double longueur) {
+    this.longueur = longueur;
+  }
+
   @Override
   public double aire() {
-    return 0;
+    return Math.pow(longueur, 2);
   } // aire()
 } // Carre

@@ -2,27 +2,23 @@ package question5;
 
 @SuppressWarnings("WeakerAccess")
 public class Calcule4 {
-  // Méthode 4 - généricité
-  public <T extends Carre> double aire(T objet) {
-    return objet.aire();
-  } // aire()
+  // Methode 4 - genericite
+  public <T extends Carre> void aire(T objet) {
+    System.out.printf("Aire pour " + objet.getClass().getSimpleName() + " : %.3f\n", objet.aire());
+  }
 
-  public <T extends Sphere> double aire(T objet) {
-    return objet.aire();
-  } // aire()
+  public <T extends Sphere> void aire(T objet) {
+    System.out.printf("Aire pour " + objet.getClass().getSimpleName() + " : %.3f\n", objet.aire());
+  }
 
   public static void main(String[] args) {
-    Carre carre = new Carre();
+    Carre carre = new Carre(2);
     Plan plan = new Plan();
-    Sphere sphere = new Sphere();
+    Sphere sphere = new Sphere(1);
     Calcule4 calcule4 = new Calcule4();
-    println("Méthode 4 - généricité");
-    println("Aire du carré: " + calcule4.aire(carre));
-    println("Aire de la sphère: " + calcule4.aire(sphere));
+    System.out.println("Methode 4 - genericite");
+    calcule4.aire(carre);
+    calcule4.aire(sphere);
     //println(aire(plan)); // erreur
-  } // main()
-
-  public static void println(Object o) {
-    System.out.println(o);
-  } // println()
-} // Calcule
+  }
+}
