@@ -1,6 +1,6 @@
 package question5;
 
 @SuppressWarnings("WeakerAccess")
-public interface Objet {
+public interface ObjetAire {
   double aire();
 }

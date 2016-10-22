@@ -1,7 +1,7 @@
 package question5;
 
 @SuppressWarnings("WeakerAccess")
-public class Carre extends Objet2D implements Objet {
+public class Carre extends Objet2D implements ObjetAire {
   private double longueur;
 
   public Carre(double longueur) {

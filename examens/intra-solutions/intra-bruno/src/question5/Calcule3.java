@@ -3,7 +3,7 @@ package question5;
 @SuppressWarnings("WeakerAccess")
 public class Calcule3 {
   // Méthode 3 - interface
-  public static void aire(Objet o)  {
+  public static void aire(ObjetAire o)  {
     System.out.printf("Aire pour " + o.getClass().getSimpleName() + " : %.3f\n", o.aire());
   }
 

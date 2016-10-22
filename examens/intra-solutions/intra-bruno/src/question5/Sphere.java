@@ -1,7 +1,7 @@
 package question5;
 
 @SuppressWarnings("WeakerAccess")
-public class Sphere extends Objet3D implements Objet {
+public class Sphere extends Objet3D implements ObjetAire {
   private double rayon;
 
   public Sphere(double rayon) {
@@ -10,6 +10,7 @@ public class Sphere extends Objet3D implements Objet {
 
   @Override
   public double aire() {
-    return Math.PI * Math.pow(rayon, 2);
+    // surface = 4 * PI * (r ^ 2)
+    return 4 * Math.PI * Math.pow(rayon, 2);
   } // aire()
 } // Sphere
