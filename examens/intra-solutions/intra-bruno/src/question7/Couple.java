@@ -27,11 +27,10 @@ public class Couple<T extends Comparable> implements Comparable {
 
     if (v2 instanceof Couple) {
       couple2 = (Couple) v2;
-      if (a1.comparer(couple2.a1) == Ordre.EGAL) {
+      ordre = a1.comparer(couple2.a1);
+      if (ordre == Ordre.EGAL) {
         ordre = a2.comparer(couple2.a2);
-      } else {
-        ordre = a1.comparer(couple2.a1);
-      } // else
+      } // if
     } // if
 
     return ordre;
