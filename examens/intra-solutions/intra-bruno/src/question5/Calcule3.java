@@ -9,7 +9,7 @@ public class Calcule3 {
 
   public static void main(String[] args) {
     Carre carre = new Carre(2);
-    Plan plan = new Plan();
+    Plan plan = new Plan(1, 2);
     Sphere sphere = new Sphere(1);
     System.out.println("Méthode 3 - interface");
     aire(carre);

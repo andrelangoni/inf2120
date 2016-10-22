@@ -12,5 +12,5 @@ public class Sphere extends Objet3D implements ObjetAire {
   public double aire() {
     // surface = 4 * PI * (r ^ 2)
     return 4 * Math.PI * Math.pow(rayon, 2);
-  } // aire()
-} // Sphere
+  }
+}

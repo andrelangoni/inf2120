@@ -13,7 +13,7 @@ public class Calcule2 {
 
   public static void main(String[] args) {
     Carre carre = new Carre(2);
-    Plan plan = new Plan();
+    Plan plan = new Plan(1, 2);
     Sphere sphere = new Sphere(1);
     System.out.println("Méthode 2 - polymorphisme");
     System.out.printf("Aire pour " + carre.getClass().getSimpleName() + " : %.3f\n", aire(carre));
