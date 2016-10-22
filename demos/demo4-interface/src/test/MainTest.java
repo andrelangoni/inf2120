@@ -3,6 +3,7 @@ package test;
 import main.Main;
 import nombre.Fraction;
 import nombre.NDouble;
+import nombre.Nombre;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -28,6 +29,22 @@ public class MainTest {
     liste.add(new Fraction(5, 8));
     liste.add(new Fraction(6, 16));
     assertEquals(new Fraction(9, 4), Main.somme(liste));
+  }
+
+  @Test
+  public void listeGenerale() throws Exception {
+    ArrayList<Nombre> liste = new ArrayList<>();
+    liste.add(new NDouble(1));
+    liste.add(new Fraction(3, 4));
+    liste.add(new NDouble(3));
+    liste.add(new Fraction(6, 16));
+
+    for (Nombre nombre : liste) {
+      //equivalent a System.out.println(nombre.toString());
+      System.out.println(nombre);
+    }
+
+    assertEquals(4, liste.size());
   }
 
 }

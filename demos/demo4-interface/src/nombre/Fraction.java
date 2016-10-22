@@ -34,7 +34,7 @@ public class Fraction implements Nombre<Fraction> {
   @Override
   public Fraction add(Fraction x) {
     // (ad + bc) / (bd)
-    return new Fraction(num * x.getDenom() + denom * x.getNum(), (denom * x.getDenom()));
+    return new Fraction(num * x.getDenom() + denom * x.getNum(), denom * x.getDenom());
   }
 
   @Override
