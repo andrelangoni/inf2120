@@ -18,10 +18,9 @@ public class Main {
    * @param p pile à copier
    */
   public static Pile copier(Pile p) {
-    return null;
+    Pile inverse = copierInverse(p);
+    return copierInverse(inverse);
   }
-
-  ;
 
   /**
    * Retourne une nouvelle file copie identique à f.
@@ -29,11 +28,19 @@ public class Main {
    * @param f file à copier
    */
   public static File copier(File f) {
-    return null;
-  }
+    File copie = new File();
 
-  ;
-  ;
+    while (!f.estVide()) {
+      try {
+        //noinspection unchecked
+        copie.enfiler(f.defiler());
+      } catch (FileVide fileVide) {
+        fileVide.printStackTrace();
+      }
+    } // while()
+
+    return copie;
+  }
 
   /**
    * Retourne une nouvelle file ayant les mêmes éléments mais en ordre inverse.
@@ -41,9 +48,48 @@ public class Main {
    * @param f file à copier
    */
   public static File copierInverse(File f) {
-    return null;
+    Pile pile = new Pile();
+    File copie = new File();
+
+    while (!f.estVide()) {
+      try {
+        //noinspection unchecked
+        pile.empiler(f.defiler());
+      } catch (FileVide fileVide) {
+        fileVide.printStackTrace();
+      }
+    } // while()
+
+    while (!pile.estVide()) {
+      try {
+        //noinspection unchecked
+        copie.enfiler(pile.depiler());
+      } catch (PileVide pileVide) {
+        pileVide.printStackTrace();
+      }
+    } // while()
+
+    return copie;
   }
 
-  ;
+  /**
+   * Retourne une nouvelle pile ayant les mêmes éléments mais en ordre inverse.
+   *
+   * @param p pile à copier
+   */
+  public static Pile copierInverse(Pile p) {
+    Pile copie = new Pile();
+
+    while (!p.estVide()) {
+      try {
+        //noinspection unchecked
+        copie.empiler(p.depiler());
+      } catch (PileVide pileVide) {
+        pileVide.printStackTrace();
+      }
+    } // while()
+
+    return copie;
+  } // copierInverse()
 
 }

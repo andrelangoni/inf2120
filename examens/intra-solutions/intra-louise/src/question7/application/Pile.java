@@ -28,6 +28,7 @@ public class Pile<T> implements IPile {
 
   public T depiler() throws PileVide {
     T temp = _sommet.element;
+
     if (estVide()) {
       throw new PileVide("La pile est vide");
     } // if
@@ -47,21 +48,4 @@ public class Pile<T> implements IPile {
     }
   }
 
-  /**
-   * Retourne une nouvelle pile ayant les mêmes éléments mais en ordre inverse.
-   *
-   * @param p pile à copier
-   */
-  public static Pile copierInverse(Pile p) {
-    Pile copie = new Pile();
-    //Noeud<T> noeud = _sommet.precedent;
-    while (!p.estVide()) {
-      try {
-        copie.empiler(p.depiler());
-      } catch (PileVide pileVide) {
-        pileVide.printStackTrace();
-      }
-    } // while()
-    return copie;
-  } // copierInverse()
 } // Pile

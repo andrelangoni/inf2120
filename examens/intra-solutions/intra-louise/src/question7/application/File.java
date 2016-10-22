@@ -25,13 +25,8 @@ public class File<T> implements IFile<T> {
   }
 
   @Override
-  public int taille() {
-    return _taille;
-  }
-
-  @Override
   public boolean estVide() {
-    return _taille == 0;
+    return _debut == null;
   }
 
   @Override
@@ -55,7 +50,9 @@ public class File<T> implements IFile<T> {
   }
 
   @Override
-  public void defiler() throws FileVide {
+  public T defiler() throws FileVide {
+    T temp = _debut.element;
+
     if (estVide()) {
       throw new FileVide("La file est vide");
     }
@@ -64,6 +61,8 @@ public class File<T> implements IFile<T> {
 
     if (_debut == null)
       _fin = null;
+
+    return temp;
   }
 
   @Override
@@ -81,6 +80,7 @@ public class File<T> implements IFile<T> {
         }
       }
     }
+
     return null;
   }
 }
