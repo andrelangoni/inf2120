@@ -1,7 +1,7 @@
 package question4_2;
 
 @SuppressWarnings("WeakerAccess")
-public class Main2 {
+public class Main3 {
   public static Pile<Integer> obtenirLesNegatifs(Pile<Integer> p1) {
     Pile<Integer> negatifs = null;
 
