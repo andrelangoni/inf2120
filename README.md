@@ -8,7 +8,7 @@
 3. [interfaces](/demos/demo4-interface)
 4. TDA, listes chainées, [piles](/cours/cours4), [files](/demos/demo5-tda-file)
 5. [ArrayList](/demos/demo3-type-generique-array-list), [iterator()](/demos/demo3-type-generique-array-list), [JUnit](/cours/cours4/)
-6. récursion vs itération
+6. [récursion vs itération](/demos/demo6-recursion)
 7. fonctions, notation "lambda"
 8. interfaces graphiques
 9. recherche, arbre binaire de recherche
