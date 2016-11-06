@@ -5,17 +5,17 @@ import services.RecursiviteException;
 
 public class Recursivite implements IRecursivite {
   @Override
-  public int additionner(int nombre, int nFois) throws RecursiviteException {
+  public int additionner(int nombre, int nbFois) throws RecursiviteException {
     // Cas de base
-    if (nFois == 1) {
+    if (nbFois == 1) {
       return nombre;
     } // if
 
-    if (nFois < 1) {
-      throw new RecursiviteException("nFois invalide");
+    if (nbFois < 1) {
+      throw new RecursiviteException("nbFois invalide");
     } // if
 
-    return nombre + additionner(nombre, --nFois);
+    return nombre + additionner(nombre, --nbFois);
   } // additionner()
 
   @Override
