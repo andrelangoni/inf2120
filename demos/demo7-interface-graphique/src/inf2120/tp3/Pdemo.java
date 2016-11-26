@@ -167,12 +167,9 @@ public class Pdemo extends JFrame {
     ecran.setSize(Graphic.TAILLE_X + BORDURE_X, 2 * Graphic.TAILLE_Y + BORDURE_Y);
 
     JPanel panel1 = new JPanel(new GridLayout(1,2));
-
     JPanel panel2 = new JPanel(new GridLayout(8,1));
-
     JPanel panel3 = new JPanel(new GridLayout(2,1));
     JPanel panel4 = new JPanel(new GridLayout(2,1));
-
     JPanel panel5 = new JPanel(new GridLayout(8,1));
 
     JPanel panelFiltreA = new JPanel(new GridLayout(2,1));
@@ -180,7 +177,8 @@ public class Pdemo extends JFrame {
     JPanel panelFiltreS = new JPanel(new GridLayout(2,1));
     JPanel panelFiltreR = new JPanel(new GridLayout(2,1));
 
-    JPopupMenu menu = new JPopupMenu("Type d'onde");
+    // region #2 JPopupMenu pour choisir le type d'onde
+    JPopupMenu menu = new JPopupMenu();
 
     JMenu menu1 = new JMenu("type 1");
     JMenu menu2 = new JMenu("type 2");
@@ -189,27 +187,8 @@ public class Pdemo extends JFrame {
       JMenuItem item1 = new JMenuItem(type.name());
       JMenuItem item2 = new JMenuItem(type.name());
 
-      //noinspection Duplicates
-      item1.addActionListener(e -> {
-        typeOnde[indexType1] = type;
-        boutonAppuye(ecran);
-        if (validerType(indexType1)) {
-          panel3.setVisible(true);
-        } else {
-          panel3.setVisible(false);
-        } // else
-      }); // addActionListener()
-
-      //noinspection Duplicates
-      item2.addActionListener(e -> {
-        typeOnde[indexType2] = type;
-        boutonAppuye(ecran);
-        if (validerType(indexType2)) {
-          panel4.setVisible(true);
-        } else {
-          panel4.setVisible(false);
-        } // else
-      }); // addActionListener()
+      setupItemType(item1, type, panel3, ecran, indexType1);
+      setupItemType(item2, type, panel4, ecran, indexType2);
 
       menu1.add(item1);
       menu2.add(item2);
@@ -217,6 +196,7 @@ public class Pdemo extends JFrame {
 
     menu.add(menu1);
     menu.add(menu2);
+    // endregion
 
      // Construire l'interface.
     dessin = new Graphic();
@@ -237,61 +217,45 @@ public class Pdemo extends JFrame {
       public void mouseExited(MouseEvent e) {}
     }); // addMouseListener()
 
+    // region #1 bouton qui joue le son
     JButton bouton = new JButton("Joue");
-    bouton.addActionListener((ActionEvent e) -> boutonAppuye(ecran));
+    bouton.addActionListener((ActionEvent e) -> rafraichir(ecran));
+    // endregion
 
+    // region #3 choix du ratio des ondes
     JLabel label1 = new JLabel("ratio 1");
     JTextField textField1 = new JTextField();
-
-    textField1.addActionListener((ActionEvent e) -> {
-      try {
-        double ratio1 = Double.parseDouble(textField1.getText());
-        if ((ratio1 >= 0) && (ratio1 <= 1) ) {
-          ondeRatio[0] = ratio1;
-          boutonAppuye(ecran);
-        } else {
-          showDialog(ecran);
-        } // else
-      } catch (NumberFormatException exception) {
-        showDialog(ecran);
-      } // catch
-    }); // function()
+    setupTextFieldRatio(textField1, ecran, indexType1);
 
     JLabel label2 = new JLabel("ratio 2");
     JTextField textField2 = new JTextField();
+    setupTextFieldRatio(textField2, ecran, indexType2);
+    // endregion
 
-    textField2.addActionListener((ActionEvent e) -> {
-      try {
-        double ratio2 = Double.parseDouble(textField2.getText());
-        if ((ratio2 >= 0) && (ratio2 <= 1)) {
-          ondeRatio[1] = ratio2;
-          boutonAppuye(ecran);
-        } else {
-          showDialog(ecran);
-        } // else
-      } catch (NumberFormatException exception) {
-        showDialog(ecran);
-      } // catch
-    }); // function()
-
+    // region #4 JCheckBox utilise 2 ondes
     JCheckBox checkBoxOndes = new JCheckBox("utilise deux ondes", true);
     checkBoxOndes.addActionListener((ActionEvent e) -> {
       utilise2Ondes = checkBoxOndes.isSelected();
-      boutonAppuye(ecran);
-    }); // function()
+      rafraichir(ecran);
+    }); // fonction
+    // endregion
 
+    // region #5 JSlider ratio entre les deux ondes
     JLabel labelRatio = new JLabel("ratio volume (%)");
     JSlider sliderRatio = new JSlider(JSlider.HORIZONTAL, RATIO_MIN, RATIO_MAX, (int) (ratioVolume * 100));
     sliderRatio.setMajorTickSpacing(10);
     sliderRatio.setPaintTicks(true);
     sliderRatio.setPaintLabels(true);
     sliderRatio.addChangeListener(e -> {
+      // attendre que l'utilisateur a fini de choisir la valeur
       if (!sliderRatio.getValueIsAdjusting()) {
         ratioVolume = ((double) sliderRatio.getValue()) / 100;
       } // if
     }); // function()
+    // endregion
 
-    JLabel labelDuree = new JLabel("durée (ms)");
+    // region #6 JSlider choisir la duree
+    JLabel labelDuree = new JLabel("duree (ms)");
     JSlider sliderDuree = new JSlider(JSlider.HORIZONTAL, DUREE_MIN, DUREE_MAX, (int) (duree * 1000));
     sliderDuree.setMajorTickSpacing(500);
     sliderDuree.setPaintTicks(true);
@@ -301,7 +265,9 @@ public class Pdemo extends JFrame {
         duree = ((double) sliderDuree.getValue()) / 1000;
       } // if
     }); // function()
+    // endregion
 
+    // region #7 changer la frequence
     JLabel labelFrequence = new JLabel("frequence");
     JTextField textFieldFrequence = new JTextField();
 
@@ -310,68 +276,42 @@ public class Pdemo extends JFrame {
         double freqenceLue = Double.parseDouble(textFieldFrequence.getText());
         if ((freqenceLue >= 20) && (freqenceLue <= 20000) ) {
           frequence = freqenceLue;
-          boutonAppuye(ecran);
+          rafraichir(ecran);
         } else {
           showDialog(ecran);
         } // else
       } catch (NumberFormatException exception) {
         showDialog(ecran);
       } // catch
-    }); // function()
+    }); // fonction
+    // endregion
 
+    // region #8 JCheckBox utilise filtre
     JCheckBox checkBoxFiltre = new JCheckBox("utilise filtre", true);
     checkBoxFiltre.addActionListener((ActionEvent e) -> {
       utiliseFiltre = checkBoxFiltre.isSelected();
-      boutonAppuye(ecran);
+      rafraichir(ecran);
     }); // function()
+    // endregion
 
-    // 4 filtres
+    // region #9 4 filtres
     JLabel labelFiltreA = new JLabel("filtre A");
     JTextField textFieldFiltreA = new JTextField();
-
-    //noinspection Duplicates
-    textFieldFiltreA.addActionListener((ActionEvent e) -> {
-      try {
-        double filtreALue = Double.parseDouble(textFieldFiltreA.getText());
-        if (filtreALue + filtreD <= duree) {
-          filtreA = filtreALue;
-          boutonAppuye(ecran);
-        } else {
-          showDialog(ecran);
-        } // else
-      } catch (NumberFormatException exception) {
-        showDialog(ecran);
-      } // catch
-    }); // function()
+    setupTextFieldFiltre(textFieldFiltreA, ecran, true, filtreD);
 
     JLabel labelFiltreD = new JLabel("filtre D");
     JTextField textFieldFiltreD = new JTextField();
-
-    //noinspection Duplicates
-    textFieldFiltreD.addActionListener((ActionEvent e) -> {
-      try {
-        double filtreDLue = Double.parseDouble(textFieldFiltreD.getText());
-        if (filtreA + filtreDLue <= duree) {
-          filtreD = filtreDLue;
-          boutonAppuye(ecran);
-        } else {
-          showDialog(ecran);
-        } // else
-      } catch (NumberFormatException exception) {
-        showDialog(ecran);
-      } // catch
-    }); // function()
+    setupTextFieldFiltre(textFieldFiltreD, ecran, false, filtreA);
 
     JLabel labelFiltreS = new JLabel("filtre S");
     JTextField textFieldFiltreS = new JTextField();
 
-    //noinspection Duplicates
     textFieldFiltreS.addActionListener((ActionEvent e) -> {
       try {
         double filtreSLue = Double.parseDouble(textFieldFiltreS.getText());
         if ((filtreSLue >= 0) && (filtreSLue <= 1)) {
           filtreS = filtreSLue;
-          boutonAppuye(ecran);
+          rafraichir(ecran);
         } else {
           showDialog(ecran);
         } // else
@@ -383,13 +323,12 @@ public class Pdemo extends JFrame {
     JLabel labelFiltreR = new JLabel("filtre R");
     JTextField textFieldFiltreR = new JTextField();
 
-    //noinspection Duplicates
     textFieldFiltreR.addActionListener((ActionEvent e) -> {
       try {
         double filtreRLue = Double.parseDouble(textFieldFiltreR.getText());
         if ((0 <= filtreRLue) && (filtreRLue <= duree)) {
           filtreR = filtreRLue;
-          boutonAppuye(ecran);
+          rafraichir(ecran);
         } else {
           showDialog(ecran);
         } // else
@@ -397,7 +336,9 @@ public class Pdemo extends JFrame {
         showDialog(ecran);
       } // catch
     }); // function()
+    // endregion
 
+    // region placer les elements dans la fenetre
     panel3.add(label1);
     panel3.add(textField1);
     panel4.add(label2);
@@ -434,13 +375,63 @@ public class Pdemo extends JFrame {
 
     ecran.add(panel1, BorderLayout.SOUTH);
     ecran.add(dessin, BorderLayout.CENTER);
+    // endregion
 
     // Afficher la fenetre.
     ecran.setVisible(true);
     panel3.setVisible(false);
 
-    boutonAppuye(ecran);
+    rafraichir(ecran);
   } // main()
+
+  public static void setupItemType(JMenuItem item, TypeOnde type, JPanel panel, Pdemo ecran, int index) {
+    item.addActionListener(e -> {
+      typeOnde[index] = type;
+      rafraichir(ecran);
+      // #3 activer/desactiver l'option
+      if (validerType(index)) {
+        panel.setVisible(true);
+      } else {
+        panel.setVisible(false);
+      } // else
+    }); // addActionListener()
+  } // setupItemType()
+
+  public static void setupTextFieldRatio(JTextField textField, Pdemo ecran, int index) {
+    textField.addActionListener((ActionEvent e) -> {
+      try {
+        double ratio = Double.parseDouble(textField.getText());
+        if ((ratio >= 0) && (ratio <= 1) ) {
+          ondeRatio[index] = ratio;
+          rafraichir(ecran);
+        } else {
+          showDialog(ecran);
+        } // else
+      } catch (NumberFormatException exception) {
+        showDialog(ecran);
+      } // catch
+    }); // fin de la fonction anonyme
+  } // setupTextFieldRatio()
+
+  public static void setupTextFieldFiltre(JTextField textField, Pdemo ecran, boolean setFiltreA, double filtre2) {
+    textField.addActionListener((ActionEvent e) -> {
+      try {
+        double filtreLu = Double.parseDouble(textField.getText());
+        if (filtreLu + filtre2 <= duree) {
+          if (setFiltreA) {
+            filtreA = filtreLu;
+          } else {
+            filtreD = filtreLu;
+          } // if
+          rafraichir(ecran);
+        } else {
+          showDialog(ecran);
+        } // else
+      } catch (NumberFormatException exception) {
+        showDialog(ecran);
+      } // catch
+    }); // function()
+  } // setupTextFieldFiltre()
 
   private static boolean validerType(int indice) {
     return (typeOnde[indice] == TypeOnde.PULSE_GENERIQUE) || (typeOnde[indice] == TypeOnde.TRIANGLE_GENERIQUE);
@@ -450,7 +441,7 @@ public class Pdemo extends JFrame {
     JOptionPane.showMessageDialog(ecran, "Valeur invalide", "Attention", JOptionPane.WARNING_MESSAGE);
   } // showDialog()
 
-  private static void boutonAppuye(Pdemo ecran) {
+  private static void rafraichir(Pdemo ecran) {
     Onde onde = ecran.construireOnde();
     dessin.setFonction(onde);
     dessin.repaint();
