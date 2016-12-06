@@ -17,7 +17,7 @@ public class Client {
 
     if (obj instanceof Client) {
       Client temp = (Client) obj;
-
+      //noinspection StringEquality
       resultat = temp.noMembre == noMembre;
     }
 
