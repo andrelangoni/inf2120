@@ -10,7 +10,7 @@ public class Main {
     exemple1();
     System.out.println();
     exemple2();
-  } // main()
+  }
 
   private static void exemple0() {
     X fonction = new X();
