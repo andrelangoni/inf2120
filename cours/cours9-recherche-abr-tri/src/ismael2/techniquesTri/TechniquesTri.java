@@ -4,28 +4,28 @@ package ismael2.techniquesTri;
 import java.util.Arrays;
 
 /**
- * La classe TechniquesTri représente quelques techniques
+ * La classe TechniquesTri represente quelques techniques
  * de tri.
  * <p>
- * Université du Québec à Montréal
+ * Universite du Quebec a Montreal
  * INF2120 - Programmation II
  *
  * @author Ismael Doukoure
  * @version Avril 2011
- *          Modifié en Avril 2014
+ *          Modifie en Avril 2014
  */
 public class TechniquesTri<T extends Comparable<T>> {
 
   /**
-   * Cette méthode trie les éléments du tableau selon la stratégie
-   * du tri par sélection.
+   * Cette methode trie les elements du tableau selon la strategie
+   * du tri par selection.
    * <p>
-   * Le tri par séléction consiste à trouver le plus petit élément et
-   * à l'échanger avec le premier élément du tableau, puis à
-   * recommencer avec le sous-tableau qui commence à la deuxième
-   * entrée et ainsi de suite.
+   * Le tri par selection consiste a trouver le plus petit element et
+   * a l'echanger avec le premier element du tableau, puis a
+   * recommencer avec le sous-tableau qui commence a la deuxième
+   * entree et ainsi de suite.
    *
-   * @param tableauAtrier Le tableau à trier
+   * @param tableauAtrier Le tableau a trier
    */
   public void triSelection(T[] tableauAtrier) {
 
@@ -34,104 +34,104 @@ public class TechniquesTri<T extends Comparable<T>> {
 
     for (int i = 0; i < tableauAtrier.length - 1; i++) {
       minIndice = i;
-      // Recherche du plus petit élément dans le reste du tableau
+      // Recherche du plus petit element dans le reste du tableau
       for (int j = i + 1; j < tableauAtrier.length; j++) {
         if (tableauAtrier[j].compareTo(tableauAtrier[minIndice]) < 0) {
           minIndice = j;
         }
       }
-      // Échanger le premier élément non trié et le plus petit élément
+      // Échanger le premier element non trie et le plus petit element
       temp = tableauAtrier[minIndice];
       tableauAtrier[minIndice] = tableauAtrier[i];
       tableauAtrier[i] = temp;
 
-      // Affiche le contenu du tableau après itération de la boucle interne
-      System.out.println(" Itération  " + (i + 1) + " : " + Arrays.asList(tableauAtrier));
+      // Affiche le contenu du tableau après iteration de la boucle interne
+      System.out.println(" Iteration  " + (i + 1) + " : " + Arrays.asList(tableauAtrier));
     }
 
   }
 
   /**
-   * Cette méthode trie les éléments du tableau selon la stratégie
-   * du tri à bulles.
+   * Cette methode trie les elements du tableau selon la strategie
+   * du tri a bulles.
    * <p>
-   * Le tri à bulles consiste à comparer les deux premiers
-   * éléments du tableau et à les ordonner puis à recommencer avec les éléments
+   * Le tri a bulles consiste a comparer les deux premiers
+   * elements du tableau et a les ordonner puis a recommencer avec les elements
    * 2 et 3, et ainsi de suite
    *
-   * @param tableauAtrier Le tableau à trier
+   * @param tableauAtrier Le tableau a trier
    */
   public void triABulles(T[] tableauAtrier) {
     T temp;
     int taille = tableauAtrier.length;
     for (int indice = taille - 1; indice >= 0; indice--) {
       for (int indiceRecherche = 0; indiceRecherche <= indice - 1; indiceRecherche++) {
-        // Trouve le plus grand élément et le déplace vers la fin du tableau par permutations
+        // Trouve le plus grand element et le deplace vers la fin du tableau par permutations
         if (tableauAtrier[indiceRecherche].compareTo(tableauAtrier[indiceRecherche + 1]) > 0) {
-          // Échanger les éléments adjacents s'ils ne sont pas dans l'ordre naturel
+          // Échanger les elements adjacents s'ils ne sont pas dans l'ordre naturel
           temp = tableauAtrier[indiceRecherche];
           tableauAtrier[indiceRecherche] = tableauAtrier[indiceRecherche + 1];
           tableauAtrier[indiceRecherche + 1] = temp;
         }
       }
 
-      System.out.println(" Itération " + (taille - indice) + " : " + Arrays.asList(tableauAtrier));
+      System.out.println(" Iteration " + (taille - indice) + " : " + Arrays.asList(tableauAtrier));
     }
   }
 
   /**
-   * Cette méthode trie les éléments du tableau selon la stratégie
+   * Cette methode trie les elements du tableau selon la strategie
    * du tri par insertion.
    * <p>
    * <ul>
-   * <li>Comparer les éléments 1 et 2 du tableau et les ordonner
+   * <li>Comparer les elements 1 et 2 du tableau et les ordonner
    * s’ils ne sont pas dans l’ordre naturel ;</li>
-   * <li>Insérer le 3e élément dans une position appropriée par
-   * rapport aux 2 éléments déjà triés ;</li>
-   * <li>Insérer le 4e élément dans une position appropriée par
-   * rapport aux 3 éléments déjà triés ;</li>
-   * <li>Répéter l’opération précédente jusqu’à la fin du tableau.</li>
+   * <li>Inserer le 3e element dans une position appropriee par
+   * rapport aux 2 elements deja tries ;</li>
+   * <li>Inserer le 4e element dans une position appropriee par
+   * rapport aux 3 elements deja tries ;</li>
+   * <li>Repeter l’operation precedente jusqu’a la fin du tableau.</li>
    * </ul>
    *
-   * @param tableauAtrier Le tableau à trier
+   * @param tableauAtrier Le tableau a trier
    */
   public void triInsertion(T[] tableauAtrier) {
 
     for (int indice = 1; indice < tableauAtrier.length; indice++) {
-      T valeur = tableauAtrier[indice];// Mettre le premier élément non trié dans la variable valeur.
+      T valeur = tableauAtrier[indice];// Mettre le premier element non trie dans la variable valeur.
       int position = indice;
 
       while (position > 0 && tableauAtrier[position - 1].compareTo(valeur) > 0) {
         tableauAtrier[position] = tableauAtrier[position - 1];
-        // On recule dans la partie triée pour faciliter
-        // le décalage des éléments plus grands.
+        // On recule dans la partie triee pour faciliter
+        // le decalage des elements plus grands.
         position--;
       }
 
-      // On place l'élément à la position correcte dans la partie triée.
+      // On place l'element a la position correcte dans la partie triee.
       tableauAtrier[position] = valeur;
 
-      System.out.println(" Itération " + indice + " : " + Arrays.asList(tableauAtrier));
+      System.out.println(" Iteration " + indice + " : " + Arrays.asList(tableauAtrier));
     }
   }
 
   /**
-   * Cette méthode trie les éléments du tableau selon la stratégie
+   * Cette methode trie les elements du tableau selon la strategie
    * du tri QuickSort.
    * <p>
    * <ul>
-   * <li>Choisir un élément dans le tableau pour jouer le rôle du pivot
-   * (Exemple le premier élément) ;</li>
-   * <li>Diviser le tableau à trier en 2 sous-tableaux tels que tous les
-   * éléments du 1er  sous-tableau soient inferieur ou égale au pivot
-   * et les éléments du 2e sous-tableau soient superieur au pivot. Le pivot
-   * est alors dans sa place définitive.</li>
-   * <li>Répéter les mêmes opérations sur les deux sous listes jusqu‘à
-   * obtenir des tableaux réduits à un seul élément.</li>
+   * <li>Choisir un element dans le tableau pour jouer le rôle du pivot
+   * (Exemple le premier element) ;</li>
+   * <li>Diviser le tableau a trier en 2 sous-tableaux tels que tous les
+   * elements du 1er  sous-tableau soient inferieur ou egale au pivot
+   * et les elements du 2e sous-tableau soient superieur au pivot. Le pivot
+   * est alors dans sa place definitive.</li>
+   * <li>Repeter les mêmes operations sur les deux sous listes jusqu‘a
+   * obtenir des tableaux reduits a un seul element.</li>
    * </ul>
    *
-   * @param tableauAtrier Tableau à trier
-   * @param debut         Indice de début du tableau
+   * @param tableauAtrier Tableau a trier
+   * @param debut         Indice de debut du tableau
    * @param fin           Indice de fin du tableau
    */
   public void quickSort(T[] tableauAtrier, int debut, int fin) {
@@ -139,27 +139,27 @@ public class TechniquesTri<T extends Comparable<T>> {
     int droit = debut + 1; // Curseur allant vers la droite
     int gauche = fin; // Curseur allant vers la gauche
     T valeurPivot; // Pivot de la partition
-    T temp;  // pour les échanges
+    T temp;  // pour les echanges
 
     if (debut < fin) {
       valeurPivot = tableauAtrier[debut];
-      System.out.println("\nPartition à trier " + Arrays.asList(Arrays.copyOfRange(tableauAtrier, debut, fin + 1)));
+      System.out.println("\nPartition a trier " + Arrays.asList(Arrays.copyOfRange(tableauAtrier, debut, fin + 1)));
       System.out.println("Valeur du pivot : " + valeurPivot);
 
       do {
-        // Deplacement du curseur DROIT vers la droite à la recherche
+        // Deplacement du curseur DROIT vers la droite a la recherche
         // d'une valeur plus grande que la valeur pivot.
         while (droit <= gauche && tableauAtrier[droit].compareTo(valeurPivot) <= 0) {
           droit = droit + 1;
         }
-        // Deplacement du curseur GAUCHE vers la gauche à la recherche
+        // Deplacement du curseur GAUCHE vers la gauche a la recherche
         // d'une valeur plus petite que la valeur pivot.
         while (droit <= gauche && tableauAtrier[gauche].compareTo(valeurPivot) > 0) {
           gauche = gauche - 1;
         }
 
         if (droit < gauche) {
-          // Échanger les éléments sur lesquels gauche et droit se sont arrêtés
+          // Échanger les elements sur lesquels gauche et droit se sont arrêtes
           System.out.println("    Échange : " + tableauAtrier[droit] + " <--> " + tableauAtrier[gauche]);
           temp = tableauAtrier[gauche];
           tableauAtrier[gauche] = tableauAtrier[droit];
@@ -169,13 +169,13 @@ public class TechniquesTri<T extends Comparable<T>> {
         }
       } while (droit <= gauche);// while
 
-      // déplacer la valeur du pivot au point de partition (ou gauche s'est arrêté)
+      // deplacer la valeur du pivot au point de partition (ou gauche s'est arrête)
       temp = tableauAtrier[gauche];
       tableauAtrier[gauche] = tableauAtrier[debut];
       tableauAtrier[debut] = temp;
 
       // Afficher le resultat du partitionnement
-      System.out.println("\nRésultat du partitionnement");
+      System.out.println("\nResultat du partitionnement");
       if (debut <= gauche) {
         System.out.print(Arrays.asList(Arrays.copyOfRange(tableauAtrier, debut, gauche)));
       } else {
@@ -188,18 +188,18 @@ public class TechniquesTri<T extends Comparable<T>> {
         System.out.println("[]");
       }
 
-      // La valeur du point de partition (pivot) est donnée par le curseur gauche. Trier ensuite de part et d'autre du pivot.
+      // La valeur du point de partition (pivot) est donnee par le curseur gauche. Trier ensuite de part et d'autre du pivot.
       quickSort(tableauAtrier, debut, gauche - 1);// partition de gauche
       quickSort(tableauAtrier, gauche + 1, fin);// partition de droite
 
     } else if (debut == fin) {
-      System.out.println("\nPartition à trier [" + tableauAtrier[debut] + "]");
+      System.out.println("\nPartition a trier [" + tableauAtrier[debut] + "]");
     } else {
-      System.out.println("\nPartition à trier []");
+      System.out.println("\nPartition a trier []");
     }
   }
 
-  // Appel de main pour tester les différentes techniques de tri
+  // Appel de main pour tester les differentes techniques de tri
   public static void main(String[] args) {
 
     TechniquesTri<Integer> trieuse = new TechniquesTri<Integer>();
@@ -207,53 +207,53 @@ public class TechniquesTri<T extends Comparable<T>> {
     //Integer [] tableauAtrier = new Integer[]{9, 6, 8, 12, 3, 1, 7};
     Integer[] tableauAtrier = new Integer[]{51, 8, 21, 52, 26, 28, 57, 3, 99, 46, 38, 16, 34, 42, 68};
     System.out.println("**********************************");
-    System.out.println("|     Début Tri sélection        |");
+    System.out.println("|     Debut Tri selection        |");
     System.out.println("**********************************");
 
-    System.out.println("Tableau à trier : " + Arrays.asList(tableauAtrier));
+    System.out.println("Tableau a trier : " + Arrays.asList(tableauAtrier));
     System.out.println();
 
     trieuse.triSelection(tableauAtrier);
 
     System.out.println();
-    System.out.println("Tableau trié : " + Arrays.asList(tableauAtrier));
+    System.out.println("Tableau trie : " + Arrays.asList(tableauAtrier));
 
     System.out.println("**********************************");
-    System.out.println("|     Fin Tri sélection          |");
+    System.out.println("|     Fin Tri selection          |");
     System.out.println("**********************************");
 
 
     //tableauAtrier = new Integer[]{9, 6, 8, 12, 3, 1, 7};
     tableauAtrier = new Integer[]{51, 8, 21, 52, 26, 28, 57, 3, 99, 46, 38, 16, 34, 42, 68};
     System.out.println("***************************************");
-    System.out.println("|        Début Tri à bulles           |");
+    System.out.println("|        Debut Tri a bulles           |");
     System.out.println("***************************************");
 
-    System.out.println("Tableau à trier : " + Arrays.asList(tableauAtrier));
+    System.out.println("Tableau a trier : " + Arrays.asList(tableauAtrier));
     System.out.println();
 
     trieuse.triABulles(tableauAtrier);
 
     System.out.println();
-    System.out.println("Tableau trié : " + Arrays.asList(tableauAtrier));
+    System.out.println("Tableau trie : " + Arrays.asList(tableauAtrier));
 
     System.out.println("***************************************");
-    System.out.println("|         Fin Tri à bulles            |");
+    System.out.println("|         Fin Tri a bulles            |");
     System.out.println("***************************************");
 
     //tableauAtrier = new Integer[]{9, 6, 8, 12, 3, 1, 7};
     tableauAtrier = new Integer[]{51, 8, 21, 52, 26, 28, 57, 3, 99, 46, 38, 16, 34, 42, 68};
     System.out.println("***************************************");
-    System.out.println("|        Début Tri par insertion      |");
+    System.out.println("|        Debut Tri par insertion      |");
     System.out.println("***************************************");
 
-    System.out.println("Tableau à trier : " + Arrays.asList(tableauAtrier));
+    System.out.println("Tableau a trier : " + Arrays.asList(tableauAtrier));
     System.out.println();
 
     trieuse.triInsertion(tableauAtrier);
 
     System.out.println();
-    System.out.println("Tableau trié : " + Arrays.asList(tableauAtrier));
+    System.out.println("Tableau trie : " + Arrays.asList(tableauAtrier));
 
     System.out.println("***************************************");
     System.out.println("|         Fin Tri par insertion       |");
@@ -263,16 +263,16 @@ public class TechniquesTri<T extends Comparable<T>> {
     tableauAtrier = new Integer[]{90, 65, 7, 305, 120, 110, 8};
     //tableauAtrier = new Integer[]{51, 8, 21, 52, 26, 28, 57, 3, 99, 46, 38, 16, 34, 42, 68};
     System.out.println("***************************************");
-    System.out.println("|        Début Tri QuickSort          |");
+    System.out.println("|        Debut Tri QuickSort          |");
     System.out.println("***************************************");
 
-    System.out.println("Tableau à trier : " + Arrays.asList(tableauAtrier));
+    System.out.println("Tableau a trier : " + Arrays.asList(tableauAtrier));
     System.out.println();
 
     trieuse.quickSort(tableauAtrier, 0, tableauAtrier.length - 1);
 
     System.out.println();
-    System.out.println("Tableau trié : " + Arrays.asList(tableauAtrier));
+    System.out.println("Tableau trie : " + Arrays.asList(tableauAtrier));
 
     System.out.println("***************************************");
     System.out.println("|         Fin Tri QuickSort           |");

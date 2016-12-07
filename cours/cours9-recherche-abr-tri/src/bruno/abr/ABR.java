@@ -204,4 +204,22 @@ public class ABR<E extends Comparable<E>> {
 
     return true;
   } // estABR()
+
+  public static int nbNoeudsAvecPrefixe(ABR<String> arbre, String prefixe) {
+    int nbNoeuds = 0; // hauteur de l'element dans l'arbre
+
+    String sousChaine = arbre._element.substring(0, prefixe.length());
+    if (prefixe.equals(sousChaine)) {
+      nbNoeuds++;
+    } // if
+
+    if (arbre._droite != null) {
+      nbNoeuds += nbNoeudsAvecPrefixe(arbre._droite, prefixe);
+    } // if
+    if (arbre._gauche != null) {
+      nbNoeuds += nbNoeudsAvecPrefixe(arbre._gauche, prefixe);
+    } // if
+
+    return nbNoeuds;
+  } // nbNoeudsAvecPrefixe()
 } // ABR

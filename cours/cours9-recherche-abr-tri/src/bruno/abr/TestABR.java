@@ -98,27 +98,9 @@ public class TestABR {
   @Test
   public void nbNoeudsAvecPrefixe() throws Exception {
     System.out.println("nbNoeudsAvecPrefixe()");
-    assertEquals(2, nbNoeudsAvecPrefixe(racine, "b"));
-    assertEquals(1, nbNoeudsAvecPrefixe(racine, "s"));
-    assertEquals(0, nbNoeudsAvecPrefixe(racine, "a"));
-  } // nbNoeudsAvecPrefixe()
-
-  private int nbNoeudsAvecPrefixe(ABR<String> arbre, String prefixe) {
-    int nbNoeuds = 0; // hauteur de l'element dans l'arbre
-
-    String sousChaine = arbre._element.substring(0, prefixe.length());
-    if (prefixe.equals(sousChaine)) {
-      nbNoeuds++;
-    } // if
-
-    if (arbre._droite != null) {
-      nbNoeuds += nbNoeudsAvecPrefixe(arbre._droite, prefixe);
-    } // if
-    if (arbre._gauche != null) {
-      nbNoeuds += nbNoeudsAvecPrefixe(arbre._gauche, prefixe);
-    } // if
-
-    return nbNoeuds;
+    assertEquals(2, ABR.nbNoeudsAvecPrefixe(racine, "b"));
+    assertEquals(1, ABR.nbNoeudsAvecPrefixe(racine, "s"));
+    assertEquals(0, ABR.nbNoeudsAvecPrefixe(racine, "a"));
   } // nbNoeudsAvecPrefixe()
 
   @Test
