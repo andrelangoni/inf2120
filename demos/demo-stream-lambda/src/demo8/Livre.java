@@ -42,4 +42,13 @@ public class Livre {
   public void setPrix(double nouveauPrix) {
     prix = nouveauPrix;
   }
+
+  public void devaloriser(double perte) {
+    prix *= (1 - perte);
+  }
+
+  @Override
+  public String toString() {
+    return titre;
+  }
 }
