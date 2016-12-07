@@ -14,7 +14,7 @@
 5. [ArrayList](/demos/demo-type-generique-array-list), iterator(), [JUnit](/cours/cours4-pile/)
 6. [récursion vs itération](/demos/demo-recursion)
 7. [stream](/demos/demo-stream-lambda), fonctions, notation "lambda"
-8. [interfaces graphiques](demo-interface-graphique)
+8. [interfaces graphiques](/demos/demo-interface-graphique)
 9. recherche, arbre binaire de recherche
 10. tri
 
