@@ -1,4 +1,4 @@
-package inf2120.tp3;
+package Demo9;
 
 public class Filtre extends Compose {
 	public Filtre( Onde onde1, Onde onde2 )

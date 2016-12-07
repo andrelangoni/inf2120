@@ -19,6 +19,4 @@ hs_err_pid*
 
 # Demos
 INF2120-Demo-master/
-
-# Demo 6 / TP3
-#demos/demo6-Synthetiseur
+demos/demo-interface-graphique-charles

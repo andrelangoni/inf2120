@@ -1,4 +1,4 @@
-package inf2120.tp3;
+package Demo9;
 
 public class Mixe extends Compose {
 	protected double volume1;

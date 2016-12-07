@@ -1,6 +1,6 @@
-package inf2120.tp3;
+package Demo9;
 
-public class ScieD extends inf2120.tp3.TriangleGenerique {
+public class ScieD extends TriangleGenerique {
 	ScieD( double tauxEchantillonage, double frequence ) 
 	{
 		super( tauxEchantillonage, frequence, 0.0 );

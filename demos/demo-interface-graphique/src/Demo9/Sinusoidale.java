@@ -1,4 +1,4 @@
-package inf2120.tp3;
+package Demo9;
 
 public class Sinusoidale extends Onde {
 

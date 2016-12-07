@@ -1,4 +1,4 @@
-package inf2120.tp3;
+package Demo9;
 
 public class ScieM extends TriangleGenerique {
 	ScieM( double tauxEchantillonage, double frequence ) 
