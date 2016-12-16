@@ -1,0 +1,17 @@
+Préparation Final Automne 2016
+
+Pour le tri et l'arbre binaire, c'était la même chose dans l'examen final de l'été 2016 que dans l'ancien examen de l'été 2013.
+
+Pour les stream c'était du style du laboratoire. Par exemple,
+
+"En utilisant les stream et la notation lambda, afficher tous les nombres dans la liste qui sont inférieur à 5."
+
+List<Integer> liste = Arrays.asList(2,4,6,8);
+
+[réponse ici]
+
+Aussi tu dois connaître la complexité des algorithmes de tri avec la notation O() (pire, moyen, meilleur cas) pour les 4 types de tri.
+
+Il y avait aussi une question où il fallait faire une petite interface graphique avec Java Swing du style de l'examen de Louise Laforest.
+
+Et dans l'intra, pour la récursion, il avait demander de faire la même fonction en version itérative (avec boucle(s) for, while etc.) et une version récursive.
