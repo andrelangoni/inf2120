@@ -59,6 +59,8 @@ public class TestABR {
     assertEquals(0, racine.recherche(racine, "introuvable"));
   } // recherche()
 
+  // Methodes pour examen de Louise
+
   @Test
   public void nbNoeuds() throws Exception {
     System.out.println("nbNoeuds()");
